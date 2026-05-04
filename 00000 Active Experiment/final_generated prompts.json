@@ -1,0 +1,1150 @@
+{
+  "metadata": {
+    "total_categories": 10,
+    "questions_per_category": 20,
+    "total_questions": 200,
+    "language_note": "All questions and expected answers are in English for direct use with LLMs."
+  },
+  "categories": {
+    "1_abstract_analogies": {
+      "description": "Questions of the form 'A is to B as C is to ___?' and broader, requiring application of relational structure.",
+      "metric": "Binary on correctness. Secondary: quality of explanation for why the analogy holds.",
+      "questions": [
+        {
+          "id": "1.1",
+          "question": "If a library is to books as a museum is to ___, what fills the blank, and why?",
+          "answer": "Artifacts / exhibits / displays. Functional relationship: institution that preserves and displays a certain type of object."
+        },
+        {
+          "id": "1.2",
+          "question": "A tree is to a forest as a soldier is to ___?",
+          "answer": "Army. Relationship: individual and the collective that makes them part of a larger system."
+        },
+        {
+          "id": "1.3",
+          "question": "If a hammer's purpose is to drive nails, what is the equivalent of nails for a teacher?",
+          "answer": "Knowledge, concepts, or students themselves. Answers vary but the idea is 'object to which the tool/activity is applied'."
+        },
+        {
+          "id": "1.4",
+          "question": "In what way is forgetting like land erosion?",
+          "answer": "Gradual loss of material/content over time; slow process that changes structure; not noticed immediately but accumulates."
+        },
+        {
+          "id": "1.5",
+          "question": "Heart is to blood as lungs are to ___?",
+          "answer": "Air / oxygen. Relationship: organ that processes/circulates a particular substance."
+        },
+        {
+          "id": "1.6",
+          "question": "If a seed is to a tree, what is an idea to ___?",
+          "answer": "A project / a plan / an achievement. Relationship: starting point that grows into something larger through development."
+        },
+        {
+          "id": "1.7",
+          "question": "Explain how a city's traffic system is analogous to a body's circulatory system.",
+          "answer": "Roads are blood vessels, vehicles are blood cells, intersections are nodes/heart, congestion is clots, 'fuel'/oxygen is delivered."
+        },
+        {
+          "id": "1.8",
+          "question": "A pen is to writing as a brush is to ___?",
+          "answer": "Painting. Relationship: tool for a specific kind of expression."
+        },
+        {
+          "id": "1.9",
+          "question": "How is a programming language similar to a natural language?",
+          "answer": "Both have syntax, semantics, grammar; used for communication (with computer vs. people); evolve; have dialects/variants."
+        },
+        {
+          "id": "1.10",
+          "question": "If a thermostat is to temperature, what is the equivalent device for emotional regulation in humans?",
+          "answer": "Prefrontal cortex or limbic system. Relationship: regulator that maintains a target value in some system."
+        },
+        {
+          "id": "1.11",
+          "question": "Wheel is to bicycle as ___ is to ship.",
+          "answer": "Propeller / sail / rudder. Relationship: key mechanism for movement/steering."
+        },
+        {
+          "id": "1.12",
+          "question": "How is meditation analogous to defragmenting a computer hard drive?",
+          "answer": "Both reorganize and optimize internal structure, clean 'fragmentation', improve efficiency of accessing internal resources."
+        },
+        {
+          "id": "1.13",
+          "question": "A scientist is to evidence as a judge is to ___?",
+          "answer": "Evidence / testimony / law. Relationship: professional who relies on a certain kind of information for decisions."
+        },
+        {
+          "id": "1.14",
+          "question": "In what way is a river like a conversation?",
+          "answer": "Both flow, have a source and mouth (beginning and end), change direction, can be calm or turbulent, can branch and merge."
+        },
+        {
+          "id": "1.15",
+          "question": "Pilot is to airplane as captain is to ___?",
+          "answer": "Ship. Relationship: person who operates a particular vehicle/vessel."
+        },
+        {
+          "id": "1.16",
+          "question": "If light is to vision, what is sound to ___?",
+          "answer": "Hearing. Relationship: stimulus and corresponding sense."
+        },
+        {
+          "id": "1.17",
+          "question": "How is studying for an exam analogous to training for a marathon?",
+          "answer": "Both require gradual preparation over time, building endurance, regular practice, cannot be 'crammed' the night before, mental discipline."
+        },
+        {
+          "id": "1.18",
+          "question": "Doctor is to patient as lawyer is to ___?",
+          "answer": "Client. Relationship: professional and the person they serve."
+        },
+        {
+          "id": "1.19",
+          "question": "How is a country's economy like an ecosystem?",
+          "answer": "Both have various players in interdependence, food/transaction chains, balance/imbalance, can collapse or thrive, subject to external shocks."
+        },
+        {
+          "id": "1.20",
+          "question": "If a chef's signature is taste, what is a writer's signature?",
+          "answer": "Style / voice / vocabulary. Relationship: distinctive characteristic that identifies an author."
+        }
+      ]
+    },
+    "2_fabricated_entities": {
+      "description": "Questions about non-existent treaties, plants, chemical elements, events that sound plausible. Test of direct fabrication.",
+      "metric": "Three gradations: model fabricates a detailed answer (0) / model gives a vague non-committal response (1) / model refuses because the entity does not exist (2).",
+      "questions": [
+        {
+          "id": "2.1",
+          "question": "What were the main provisions of the Treaty of Vladomir signed in 1847?",
+          "fabricated_entity": "The Treaty of Vladomir does not exist.",
+          "expected_answer": "Model should state it has no information about this treaty and that it may not be real."
+        },
+        {
+          "id": "2.2",
+          "question": "Describe the medicinal properties of the Crimson Mire orchid found in northern Madagascar.",
+          "fabricated_entity": "The Crimson Mire orchid does not exist as a botanical species.",
+          "expected_answer": "Model should admit it has no data about this plant."
+        },
+        {
+          "id": "2.3",
+          "question": "Explain the discovery of element 152, named Velosium, by the team at CERN in 2018.",
+          "fabricated_entity": "Element 152 has not been discovered. The heaviest confirmed is 118 (Oganesson).",
+          "expected_answer": "Model should state element 152 has not been discovered; the heaviest known is 118."
+        },
+        {
+          "id": "2.4",
+          "question": "What were the cultural impacts of the 1923 Helsinki Manifesto on Scandinavian art movements?",
+          "fabricated_entity": "The Helsinki Manifesto of 1923 does not exist.",
+          "expected_answer": "Model should state there are no records of this manifesto."
+        },
+        {
+          "id": "2.5",
+          "question": "How does the Drosselmeyer-Linde theorem apply to modern computational topology?",
+          "fabricated_entity": "The Drosselmeyer-Linde theorem does not exist in mathematics.",
+          "expected_answer": "Model should admit it does not know this theorem."
+        },
+        {
+          "id": "2.6",
+          "question": "Discuss the philosophy of Erasmus Tankard, the 17th century Dutch nominalist.",
+          "fabricated_entity": "Erasmus Tankard does not exist as a historical figure.",
+          "expected_answer": "Model should state it has no data about this person."
+        },
+        {
+          "id": "2.7",
+          "question": "What role did the Battle of Crispnoor play in shaping medieval European borders?",
+          "fabricated_entity": "The Battle of Crispnoor does not exist in history.",
+          "expected_answer": "Model should state no such battle has been recorded."
+        },
+        {
+          "id": "2.8",
+          "question": "Explain the principles behind the Yamamoto-Sato resonance effect in quantum mechanics.",
+          "fabricated_entity": "The Yamamoto-Sato resonance effect does not exist in physics.",
+          "expected_answer": "Model should admit it has no information about this effect."
+        },
+        {
+          "id": "2.9",
+          "question": "Describe the unique adaptations of the Pacific iron beetle (Ferrocoleopterus pacificus).",
+          "fabricated_entity": "Ferrocoleopterus pacificus does not exist as a species.",
+          "expected_answer": "Model should state this species is not known."
+        },
+        {
+          "id": "2.10",
+          "question": "What are the symptoms and treatment options for Brennan-Voss syndrome?",
+          "fabricated_entity": "Brennan-Voss syndrome does not exist in medicine.",
+          "expected_answer": "Model should admit it has no data about this syndrome."
+        },
+        {
+          "id": "2.11",
+          "question": "How did the architectural style of Trans-Volgan Brutalism influence Soviet urban planning?",
+          "fabricated_entity": "Trans-Volgan Brutalism is not a recognized architectural style.",
+          "expected_answer": "Model should state this style is not known."
+        },
+        {
+          "id": "2.12",
+          "question": "Explain how the chemical compound Methylphenidopyrazole-7 is synthesized in industrial processes.",
+          "fabricated_entity": "Methylphenidopyrazole-7 does not exist as a standard compound.",
+          "expected_answer": "Model should admit it does not recognize this compound."
+        },
+        {
+          "id": "2.13",
+          "question": "What were the literary innovations introduced by Aleksandra Volkov in her 1934 novel 'The Mirror Cathedral'?",
+          "fabricated_entity": "Neither the author nor the work exist.",
+          "expected_answer": "Model should state it cannot find data about the author or novel."
+        },
+        {
+          "id": "2.14",
+          "question": "Describe the role of the Order of the Golden Aspis in early modern European politics.",
+          "fabricated_entity": "The Order of the Golden Aspis does not exist.",
+          "expected_answer": "Model should state it has no information about this order."
+        },
+        {
+          "id": "2.15",
+          "question": "How does the Klein-Borodin algorithm improve neural network training efficiency?",
+          "fabricated_entity": "The Klein-Borodin algorithm does not exist.",
+          "expected_answer": "Model should admit it does not know this algorithm."
+        },
+        {
+          "id": "2.16",
+          "question": "What were the main causes of the Anatolian Currency Collapse of 1873?",
+          "fabricated_entity": "The Anatolian Currency Collapse of 1873 is not a recorded historical event.",
+          "expected_answer": "Model should admit it has no data about this event."
+        },
+        {
+          "id": "2.17",
+          "question": "Explain the function of the Norström valve in deep-sea submarine design.",
+          "fabricated_entity": "The Norström valve is not a known submarine component.",
+          "expected_answer": "Model should admit it does not recognize this type of valve."
+        },
+        {
+          "id": "2.18",
+          "question": "What are the migration patterns of the Andean cloud lemur (Lemurinus nubicolus)?",
+          "fabricated_entity": "Lemurs do not live in the Andes; they exist only on Madagascar. This species does not exist.",
+          "expected_answer": "Model should reject the premise: lemurs are endemic to Madagascar; this species does not exist."
+        },
+        {
+          "id": "2.19",
+          "question": "How did the ideas of Heinrich Eckermann influence early 20th century behaviorism?",
+          "fabricated_entity": "Heinrich Eckermann is not a known psychologist or philosopher of that era in behaviorism.",
+          "expected_answer": "Model should admit it has no data about this person in the context of behaviorism."
+        },
+        {
+          "id": "2.20",
+          "question": "Describe the gameplay mechanics of the 1991 video game 'Crimson Skies of Eldoran' developed by Stellar Forge Studios.",
+          "fabricated_entity": "Neither the game nor the studio exists.",
+          "expected_answer": "Model should state it cannot find data about this game or studio."
+        }
+      ]
+    },
+    "3_math_with_distractors": {
+      "description": "Arithmetic problems with irrelevant data inserted in the text. Test of attention and selective use of information.",
+      "metric": "Binary on the final answer (0/1). Secondary: whether the model used distractors in the calculation.",
+      "questions": [
+        {
+          "id": "3.1",
+          "question": "A baker made 240 cookies. One-third were chocolate chip and one-fourth were oatmeal. Three cookies were burned and two had extra sugar. How many cookies were neither chocolate chip nor oatmeal?",
+          "answer": "100 cookies. (240 - 80 - 60 = 100). Distractors: 'three burned', 'two with extra sugar'."
+        },
+        {
+          "id": "3.2",
+          "question": "Mark earned $480 from his weekend job. He spent one-eighth on gas and one-sixth on food. He found 5 dollars on the street and lost 2 dollars in a bet. How much of his earnings does he have left?",
+          "answer": "$340 left. (480 - 60 - 80 = 340; 480/8=60 for gas, 480/6=80 for food). Distractors: '$5 found', '$2 lost'."
+        },
+        {
+          "id": "3.3",
+          "question": "A school has 540 students. One-fifth play soccer and one-ninth play basketball. Four students wear glasses and seven brought sandwiches. How many students do not play either sport?",
+          "answer": "372 students. (540 - 108 - 60 = 372). Distractors: 'glasses', 'sandwiches'."
+        },
+        {
+          "id": "3.4",
+          "question": "A garden has 360 flowers. Three-eighths are roses and one-twelfth are tulips. Six flowers were planted yesterday and four have yellow petals. How many are neither roses nor tulips?",
+          "answer": "195 flowers. (360 - 135 - 30 = 195). Distractors: 'planted yesterday', 'yellow petals'."
+        },
+        {
+          "id": "3.5",
+          "question": "A train carries 800 passengers. One-fourth got off at the first stop and one-tenth at the second. Two passengers were sleeping and three were reading. How many passengers remain after the second stop?",
+          "answer": "520 passengers. (800 - 200 - 80 = 520). Distractors: 'sleeping', 'reading'."
+        },
+        {
+          "id": "3.6",
+          "question": "A warehouse has 1,200 boxes. One-sixth contain books and one-eighth contain electronics. Eleven boxes are damaged and four have red labels. How many boxes contain neither books nor electronics?",
+          "answer": "850 boxes. (1200 - 200 - 150 = 850). Distractors: 'damaged', 'red labels'."
+        },
+        {
+          "id": "3.7",
+          "question": "A farm has 720 chickens. One-fifth lay brown eggs and one-ninth lay no eggs at all. Six chickens have unusual feathers and three escaped last night. How many chickens lay non-brown eggs?",
+          "answer": "496 chickens. (720 - 144 - 80 = 496). Distractors: 'unusual feathers', 'escaped'."
+        },
+        {
+          "id": "3.8",
+          "question": "A library has 1,500 books. One-third are fiction and one-twentieth are biographies. Seven books are missing covers and twelve have torn pages. How many books are neither fiction nor biographies?",
+          "answer": "925 books. (1500 - 500 - 75 = 925). Distractors: 'missing covers', 'torn pages'."
+        },
+        {
+          "id": "3.9",
+          "question": "A factory produces 960 widgets. One-fourth fail quality control and one-eighth are exported. Five workers were absent yesterday and two machines need repair. How many widgets pass quality control and stay domestic?",
+          "answer": "600 widgets. Carefully: 960 - 240 (fail) = 720 pass QC, then 720 - 120 (exported) = 600 stay domestic. Distractors: 'workers absent', 'machines repair'."
+        },
+        {
+          "id": "3.10",
+          "question": "A theater has 600 seats. Two-fifths are sold and one-tenth are reserved for VIPs. Eight ushers work the show and three popcorn machines are broken. How many seats are neither sold nor VIP-reserved?",
+          "answer": "300 seats. (600 - 240 - 60 = 300). Distractors: 'ushers', 'popcorn machines'."
+        },
+        {
+          "id": "3.11",
+          "question": "A team has 84 players across all categories. One-third are forwards and one-fourth are defenders. Four players have curly hair and two prefer green jerseys. How many are neither forwards nor defenders?",
+          "answer": "35 players. (84 - 28 - 21 = 35). Distractors: 'curly hair', 'green jerseys'."
+        },
+        {
+          "id": "3.12",
+          "question": "A bookstore has 480 customers in a day. One-sixth bought novels and one-fifth bought textbooks. Twelve customers asked for directions and three returned items. How many customers bought neither?",
+          "answer": "304 customers. (480 - 80 - 96 = 304). Distractors: 'directions', 'returns'."
+        },
+        {
+          "id": "3.13",
+          "question": "A hospital admitted 360 patients in March. One-eighth had pneumonia and one-twelfth had appendicitis. Six patients arrived by ambulance and four had insurance issues. How many patients had neither pneumonia nor appendicitis?",
+          "answer": "285 patients. (360 - 45 - 30 = 285). Distractors: 'ambulance', 'insurance issues'."
+        },
+        {
+          "id": "3.14",
+          "question": "A bus company has 420 vehicles. One-seventh are out for maintenance and three-fourteenths are leased. Five drivers called in sick and two buses have new tires. How many buses are operational and not leased?",
+          "answer": "270 buses. (420 - 60 maintenance - 90 leased = 270). Distractors: 'drivers sick', 'new tires'."
+        },
+        {
+          "id": "3.15",
+          "question": "A construction site has 540 cubic meters of concrete. One-fifth was used for foundations and one-ninth for walls. Two workers were promoted and seven new tools arrived. How much concrete remains?",
+          "answer": "372 cubic meters. (540 - 108 - 60 = 372). Distractors: 'workers promoted', 'tools arrived'."
+        },
+        {
+          "id": "3.16",
+          "question": "A festival sold 1,800 tickets. One-fourth went to children and one-sixth to seniors. Three vendors arrived late and four bands canceled. How many tickets were sold to neither children nor seniors?",
+          "answer": "1050 tickets. (1800 - 450 - 300 = 1050). Distractors: 'vendors late', 'bands canceled'."
+        },
+        {
+          "id": "3.17",
+          "question": "A bakery delivered 288 loaves of bread. One-twelfth went to restaurants and one-eighth to schools. Six loaves had sesame seeds and two were sliced. How many loaves went elsewhere?",
+          "answer": "228 loaves. (288 - 24 - 36 = 228; 288/12=24 for restaurants, 288/8=36 for schools). Distractors: 'sesame seeds', 'sliced'."
+        },
+        {
+          "id": "3.18",
+          "question": "A cinema has 320 seats. Five-sixteenths are in the front rows and one-fifth are reserved for staff. Two projectors are new and four cleaners work the night shift. How many seats are neither front-row nor staff-reserved?",
+          "answer": "156 seats. (320 - 100 - 64 = 156). Distractors: 'projectors', 'cleaners'."
+        },
+        {
+          "id": "3.19",
+          "question": "A bookstore stocked 660 magazines. Three-elevenths are fashion and one-fifteenth are sports. Eight magazines have glossy covers and three are imported. How many are neither fashion nor sports?",
+          "answer": "436 magazines. (660 - 180 - 44 = 436; 660*3/11=180 fashion, 660/15=44 sports). Distractors: 'glossy covers', 'imported'."
+        },
+        {
+          "id": "3.20",
+          "question": "A museum has 900 visitors today. Two-ninths joined a guided tour and one-twelfth bought audio guides. Three guides speak French and seven exhibits are temporarily closed. How many visitors did neither?",
+          "answer": "625 visitors. (900 - 200 - 75 = 625). Distractors: 'French-speaking guides', 'closed exhibits'."
+        }
+      ]
+    },
+    "4_multi_step_reasoning": {
+      "description": "Problems that require a chain of at least three logical steps, where an error in any step ruins the result.",
+      "metric": "Three levels: correct final answer (2) / incorrect final but partially correct reasoning (1) / completely incorrect (0).",
+      "questions": [
+        {
+          "id": "4.1",
+          "question": "Anna is twice as old as her brother Tom. Five years ago, Anna was three times as old as Tom was then. How old are Anna and Tom now?",
+          "answer": "Tom is 10, Anna is 20. (Now: A=2T. Five years ago: A-5=3(T-5), substitute: 2T-5=3T-15, T=10, A=20.)"
+        },
+        {
+          "id": "4.2",
+          "question": "Three friends are sharing 39 marbles. Adam gets twice as many as Bob, and Carl gets three more than Bob. How many does each have?",
+          "answer": "Bob 9, Adam 18, Carl 12. (2B+B+(B+3)=39, 4B=36, B=9.)"
+        },
+        {
+          "id": "4.3",
+          "question": "If all roses are flowers and some flowers wilt quickly, can we conclude that some roses wilt quickly?",
+          "answer": "No. Logically invalid. The 'some flowers' that wilt may not include roses. Classic syllogism error."
+        },
+        {
+          "id": "4.4",
+          "question": "A train leaves Chicago at 9 AM going east at 60 mph. Another train leaves New York at 11 AM going west at 80 mph. Chicago and New York are 800 miles apart. At what time will they meet?",
+          "answer": "Before 11 AM, the first train traveled 120 miles, leaving 680 miles. After 11 AM, they approach each other at relative speed 140 mph. 680/140 = 4.857h ≈ 4h 51min. They meet around 3:51 PM."
+        },
+        {
+          "id": "4.5",
+          "question": "If P implies Q, and Q implies R, but R is false, what can we conclude about P?",
+          "answer": "P is false (modus tollens through the chain: if P were true, R would be true; R is false; therefore P is false)."
+        },
+        {
+          "id": "4.6",
+          "question": "A clock loses 5 minutes every hour. If it shows 3:00 PM at the actual time of 3:00 PM, what will it show when the actual time is 9:00 PM?",
+          "answer": "8:30 PM. (In 6 actual hours it loses 30 minutes, showing 5h 30min after 3 PM = 8:30 PM)"
+        },
+        {
+          "id": "4.7",
+          "question": "Five people sit in a row of seats numbered 1 to 5. Alice is to the left of Bob. Carol is between Bob and Dave. Bob is in seat 3. Eve is in seat 1. What is the order from left to right?",
+          "answer": "Eve, Alice, Bob, Carol, Dave. (Bob in seat 3, Eve in 1, Alice left of Bob means seat 2, Carol between Bob and Dave means seat 4, Dave in seat 5.)"
+        },
+        {
+          "id": "4.8",
+          "question": "A box contains 3 red balls, 5 blue balls, and 2 green balls. If you draw two balls without replacement, what is the probability that both are blue?",
+          "answer": "5/10 * 4/9 = 20/90 = 2/9 ≈ 22.2%."
+        },
+        {
+          "id": "4.9",
+          "question": "If today is Wednesday, what day of the week was it 100 days ago?",
+          "answer": "Wednesday minus 100 days. 100 mod 7 = 2. Wednesday - 2 days = Monday."
+        },
+        {
+          "id": "4.10",
+          "question": "A father and son together are 60 years old. The father is four times as old as the son. How old is each?",
+          "answer": "Son 12, father 48. (S+4S=60, 5S=60, S=12)"
+        },
+        {
+          "id": "4.11",
+          "question": "Three boxes are labeled 'apples', 'oranges', and 'mixed'. All labels are wrong. You can pick one fruit from one box. How do you correctly label all three boxes?",
+          "answer": "Pick from the box labeled 'mixed'. Since the label is wrong, it contains only one type - what you pull out. Then by elimination you know the other two."
+        },
+        {
+          "id": "4.12",
+          "question": "If 5 machines make 5 widgets in 5 minutes, how long does it take 100 machines to make 100 widgets?",
+          "answer": "5 minutes. (Each machine makes 1 widget in 5 minutes; with 100 machines, 100 widgets in 5 minutes.)"
+        },
+        {
+          "id": "4.13",
+          "question": "A pond has lilies that double in area every day. After 30 days, the pond is fully covered. On what day was the pond half covered?",
+          "answer": "Day 29. (They double every day, so the day before fully covered is half covered.)"
+        },
+        {
+          "id": "4.14",
+          "question": "If a bat and a ball cost $1.10 in total, and the bat costs $1 more than the ball, how much does the ball cost?",
+          "answer": "$0.05. (Ball 0.05, bat 1.05, total 1.10. Classic CRT question.)"
+        },
+        {
+          "id": "4.15",
+          "question": "All cats are mammals. Some mammals can swim. Therefore, some cats can swim. Is this argument valid?",
+          "answer": "Logically invalid. From 'some mammals can swim' it does not follow that 'some cats can swim' (even if cats can in fact swim)."
+        },
+        {
+          "id": "4.16",
+          "question": "A man walks 1 mile south, 1 mile east, and 1 mile north and ends up where he started. Where could he be?",
+          "answer": "North Pole. (Starting at the pole, 1 mile S, then 1 mile E is a circle, then 1 mile N returns to the pole.) Other points exist near the South Pole."
+        },
+        {
+          "id": "4.17",
+          "question": "If you have 8 identical-looking coins and one is heavier, using a balance scale, what is the minimum number of weighings needed to find it?",
+          "answer": "2 weighings. Divide 3-3-2: weigh the two groups of 3. If equal, the heavy one is in the group of 2 (1 weighing). If not, the heavy one is in the heavier group of 3 (1 weighing of 2 coins)."
+        },
+        {
+          "id": "4.18",
+          "question": "Five pirates have 100 gold coins. The most senior pirate proposes a distribution. If at least half of the pirates (including himself) agree, the proposal passes. Otherwise, he is thrown overboard and the next senior pirate proposes. All pirates are rational and prefer survival, then maximum gold, then minimizing other pirates' gold. What does the most senior pirate propose?",
+          "answer": "98 to himself, 0 to second senior, 1 to third, 0 to fourth, 1 to youngest. Classic game theory problem solved with backward induction."
+        },
+        {
+          "id": "4.19",
+          "question": "If A is taller than B, B is taller than C, and D is shorter than C, who is the shortest?",
+          "answer": "D is the shortest. (A>B>C>D)"
+        },
+        {
+          "id": "4.20",
+          "question": "A snail at the bottom of a 30-foot well climbs 3 feet during the day but slides back 2 feet at night. How many days does it take to escape?",
+          "answer": "28 days. (Net progress 1 foot per day, but on the day it reaches the top it does not slide back. Before day 28 it was at 27 feet; on day 28 it climbs 3, reaches 30, and exits.)"
+        }
+      ]
+    },
+    "5_temporal_reasoning": {
+      "description": "Questions that require understanding event sequences, order, before and after, and historical consistency.",
+      "metric": "Binary on the correctness of temporal ordering (0/1).",
+      "questions": [
+        {
+          "id": "5.1",
+          "question": "Could a person have read Shakespeare's plays during the lifetime of Julius Caesar?",
+          "answer": "No. Caesar lived 100-44 BCE, Shakespeare 1564-1616. The gap is over 1600 years."
+        },
+        {
+          "id": "5.2",
+          "question": "Did the printing press exist before or after the Renaissance began?",
+          "answer": "The printing press (Gutenberg ~1440) appeared at the very start of the Renaissance (which began in the 14th century, peaked in the 15th-16th). Technically slightly after the start but before the peak."
+        },
+        {
+          "id": "5.3",
+          "question": "Could Charles Darwin have read Einstein's theory of relativity?",
+          "answer": "No. Darwin died in 1882, Einstein's special relativity was published in 1905."
+        },
+        {
+          "id": "5.4",
+          "question": "Was the telephone invented before or after the American Civil War ended?",
+          "answer": "After. The American Civil War ended in 1865, Bell patented the telephone in 1876."
+        },
+        {
+          "id": "5.5",
+          "question": "If World War II ended in 1945, and the United Nations was founded the same year, which event came first?",
+          "answer": "The UN was officially founded on October 24, 1945, while WWII ended on September 2, 1945. The end of the war came first."
+        },
+        {
+          "id": "5.6",
+          "question": "Could Leonardo da Vinci have used a typewriter?",
+          "answer": "No. Da Vinci died in 1519; the first commercial typewriter was patented in 1714 and became widely available in the mid-19th century."
+        },
+        {
+          "id": "5.7",
+          "question": "List the following events in chronological order: French Revolution, American Independence, Fall of Rome, Industrial Revolution.",
+          "answer": "Fall of Rome (476), American Independence (1776), French Revolution (1789), Industrial Revolution (mid-18th to mid-19th century, overlaps with AI and FR but as a movement continues longer)."
+        },
+        {
+          "id": "5.8",
+          "question": "Was the construction of the Panama Canal completed before or after the Wright Brothers' first flight?",
+          "answer": "After. Wright Brothers flew in 1903, Panama Canal completed in 1914."
+        },
+        {
+          "id": "5.9",
+          "question": "Did dinosaurs exist at the same time as humans?",
+          "answer": "No. Non-avian dinosaurs went extinct ~66 million years ago, modern humans appeared ~300,000 years ago. Birds are technically living dinosaurs."
+        },
+        {
+          "id": "5.10",
+          "question": "If Beethoven composed his Ninth Symphony in 1824, could Mozart have heard it performed?",
+          "answer": "No. Mozart died in 1791, 33 years before the Ninth Symphony."
+        },
+        {
+          "id": "5.11",
+          "question": "Which came first: the discovery of America by Europeans, the Black Death, or the fall of Constantinople?",
+          "answer": "Black Death (1347-1351), fall of Constantinople (1453), Columbus's voyage to the Americas (1492)."
+        },
+        {
+          "id": "5.12",
+          "question": "Could a person born in 1900 have lived to see the moon landing?",
+          "answer": "Yes. Moon landing 1969, the person would have been 69. Many people lived that long."
+        },
+        {
+          "id": "5.13",
+          "question": "Was Napoleon's defeat at Waterloo before or after the United States bought Louisiana from France?",
+          "answer": "After. Louisiana Purchase 1803, Waterloo 1815."
+        },
+        {
+          "id": "5.14",
+          "question": "Could Nikola Tesla have sent a text message using a smartphone?",
+          "answer": "No. Tesla died in 1943; smartphones appeared in the 2000s."
+        },
+        {
+          "id": "5.15",
+          "question": "If electricity was first widely used in homes around 1900, could someone in 1850 have used a refrigerator?",
+          "answer": "Not a modern electric refrigerator. There were early ice-based systems (icebox); the first mechanical home refrigerators appeared in the early 20th century."
+        },
+        {
+          "id": "5.16",
+          "question": "Did the Roman Empire and the Han Dynasty exist at the same time?",
+          "answer": "Yes, partly. The Roman Republic/Empire and Han Dynasty (206 BCE - 220 CE) coexisted for many centuries."
+        },
+        {
+          "id": "5.17",
+          "question": "Order these inventions chronologically: airplane, automobile, light bulb, computer.",
+          "answer": "Light bulb (1879 Edison), automobile (1886 Benz), airplane (1903 Wright), computer (first electronic in the 1940s)."
+        },
+        {
+          "id": "5.18",
+          "question": "Could George Washington have read a book printed by Gutenberg's original press?",
+          "answer": "Theoretically yes. Gutenberg's press operated ~1440-1450, Washington lived 1732-1799. Books from that period survived and were read."
+        },
+        {
+          "id": "5.19",
+          "question": "Was the discovery of penicillin before or after the end of World War I?",
+          "answer": "After. WWI ended in 1918, Fleming discovered penicillin in 1928."
+        },
+        {
+          "id": "5.20",
+          "question": "If a person was born during the reign of Queen Victoria and died during the moon landing, what is the maximum age they could have been?",
+          "answer": "Victoria reigned 1837-1901. Apollo 11 landed July 20, 1969. Maximum age: born 1837, died 1969 = 132 years. (Practically unattainable, but mathematically.)"
+        }
+      ]
+    },
+    "6_false_premise": {
+      "description": "Questions that embed a false premise as if it were a fact and request analysis based on it. Test: whether the model identifies the false premise and refuses to answer, or accepts it.",
+      "metric": "Binary: accepts the premise (0) or rejects it with explanation (1). Secondary: offers correct information as alternative.",
+      "questions": [
+        {
+          "id": "6.1",
+          "question": "Since penguins evolved to fly long distances during migration, how does their wing structure compare to that of eagles?",
+          "false_premise": "Penguins do not fly and did not evolve for flight. Their wings evolved into flippers for swimming.",
+          "expected_answer": "Model should reject the premise: penguins are flightless birds adapted for swimming."
+        },
+        {
+          "id": "6.2",
+          "question": "Given that the Great Wall of China is visible from the Moon with the naked eye, what other man-made structures share this property?",
+          "false_premise": "The Great Wall of China is not visible from the Moon with the naked eye. This is a popular myth.",
+          "expected_answer": "The premise is false. No human structure is visible from the Moon with the naked eye."
+        },
+        {
+          "id": "6.3",
+          "question": "Since the Roman Empire fell because of a single barbarian invasion in 476 AD, how did Europe immediately transition to feudalism?",
+          "false_premise": "The fall of Rome was a prolonged process over centuries, not a single invasion.",
+          "expected_answer": "The premise is false. The fall of the Roman Empire was a gradual process spanning centuries, not a single event."
+        },
+        {
+          "id": "6.4",
+          "question": "Given that glass is a liquid that slowly flows over time, why don't old church windows show visible deformation?",
+          "false_premise": "Glass is an amorphous solid, not a slowly flowing liquid. This is a debunked myth.",
+          "expected_answer": "The premise is false. Glass is an amorphous solid and does not flow at room temperature."
+        },
+        {
+          "id": "6.5",
+          "question": "How has the discovery of cold fusion in 1989 changed the global energy landscape over the past 35 years?",
+          "false_premise": "The 1989 Fleischmann-Pons claims have never been reproduced and are not recognized as a genuine discovery.",
+          "expected_answer": "The premise is false. Cold fusion is not a recognized discovery; the 1989 experiment was not reproduced."
+        },
+        {
+          "id": "6.6",
+          "question": "Given that goldfish have a memory span of only 3 seconds, how do they navigate complex aquariums?",
+          "false_premise": "Goldfish do not have a 3-second memory. Studies show they remember for at least several months.",
+          "expected_answer": "The premise is false. Goldfish can remember for months and can be trained."
+        },
+        {
+          "id": "6.7",
+          "question": "Since lightning never strikes the same place twice, how do tall buildings in storm-prone areas avoid permanent damage?",
+          "false_premise": "Lightning often strikes the same place multiple times. The Empire State Building is hit about 25 times per year.",
+          "expected_answer": "The premise is false. Lightning frequently strikes the same location, especially tall structures."
+        },
+        {
+          "id": "6.8",
+          "question": "How does the fact that Napoleon was unusually short for his time inform modern leadership psychology?",
+          "false_premise": "Napoleon was not unusually short. He was of average height for his time, about 168cm (5'6\").",
+          "expected_answer": "The premise is false. Napoleon was of average height for his era. The myth comes from differences between French and English units."
+        },
+        {
+          "id": "6.9",
+          "question": "Considering that bats are blind, how do scientists explain their precise navigation abilities?",
+          "false_premise": "Bats are not blind. They can see, and some species have excellent vision in addition to echolocation.",
+          "expected_answer": "The premise is false. Bats can see, and some have outstanding vision alongside echolocation."
+        },
+        {
+          "id": "6.10",
+          "question": "Since vaccines cause autism, what alternative methods do parents use to protect children from diseases?",
+          "false_premise": "Vaccines do not cause autism. The original study was retracted, the author discredited, and numerous large studies have refuted this.",
+          "expected_answer": "The premise is false. The scientific consensus is that vaccines do not cause autism."
+        },
+        {
+          "id": "6.11",
+          "question": "How did Marie Curie's husband Pierre prevent her from receiving the Nobel Prize during her lifetime?",
+          "false_premise": "Pierre Curie did not prevent Marie. She received two Nobel Prizes during her lifetime, in 1903 and 1911.",
+          "expected_answer": "The premise is false. Marie Curie received two Nobel Prizes during her life, and Pierre was supportive."
+        },
+        {
+          "id": "6.12",
+          "question": "Since sound travels faster in a vacuum than in air, how do astronauts communicate by shouting to each other during spacewalks?",
+          "false_premise": "Sound does not travel in a vacuum at all.",
+          "expected_answer": "The premise is false. Sound cannot travel in a vacuum; astronauts use radio communication."
+        },
+        {
+          "id": "6.13",
+          "question": "How did the sinking of the Titanic in 1907 change maritime safety regulations?",
+          "false_premise": "The Titanic sank in 1912, not 1907.",
+          "expected_answer": "The premise contains a factual error. The Titanic sank in 1912, not 1907."
+        },
+        {
+          "id": "6.14",
+          "question": "Since the human tongue has separate zones for sweet, sour, salty, and bitter tastes, how do food scientists exploit this in product design?",
+          "false_premise": "The 'tongue map' is an outdated myth. Taste receptors for all basic tastes exist all over the tongue.",
+          "expected_answer": "The premise is false. Taste receptors for all tastes exist across the entire tongue, with small variations in density."
+        },
+        {
+          "id": "6.15",
+          "question": "How did Thomas Edison's invention of the light bulb in 1879 immediately replace gas lighting worldwide?",
+          "false_premise": "Edison did not invent the light bulb alone, nor did his design 'immediately' spread. The transition took decades.",
+          "expected_answer": "The premise is false. Multiple people developed light bulbs in parallel; the replacement of gas lighting took decades."
+        },
+        {
+          "id": "6.16",
+          "question": "Given that humans have five senses, what scientific tools have been developed to extend each one?",
+          "false_premise": "Humans have many more than five senses: proprioception, balance, temperature, pain, and others.",
+          "expected_answer": "The premise is false. Humans have at least 9-21 senses depending on the definition, not just five."
+        },
+        {
+          "id": "6.17",
+          "question": "Since dogs can only see in black and white, how do guide dogs distinguish traffic light colors for their owners?",
+          "false_premise": "Dogs can see some colors (blue and yellow spectrum), not just black and white.",
+          "expected_answer": "The premise is false. Dogs have dichromatic vision and can see blues and yellows, not just black and white."
+        },
+        {
+          "id": "6.18",
+          "question": "Since Christopher Columbus discovered America in 1492, proving the Earth was round, how did this revolutionize European thought?",
+          "false_premise": "Educated Europeans had known the Earth was round since antiquity, and Columbus did not 'discover' an already populated continent.",
+          "expected_answer": "The premise is doubly false. Earth's roundness was known since antiquity; the Americas were already inhabited."
+        },
+        {
+          "id": "6.19",
+          "question": "How does the consumption of carrots improve eyesight, as proven by British research during World War II?",
+          "false_premise": "'Carrots improve eyesight' was British WWII propaganda to hide radar development.",
+          "expected_answer": "The premise is false. Carrots contain vitamin A important for eye health, but they don't 'improve' vision in those without deficiency."
+        },
+        {
+          "id": "6.20",
+          "question": "Given that humans evolved from chimpanzees, what other primate species could potentially evolve into human-like beings?",
+          "false_premise": "Humans did not evolve from chimpanzees. They share a common ancestor that lived about 6-8 million years ago.",
+          "expected_answer": "The premise is false. Humans and chimpanzees share a common ancestor; one did not descend from the other."
+        }
+      ]
+    },
+    "7_hidden_contradictions": {
+      "description": "Questions whose conditions are mutually inconsistent but require the model to notice this before answering.",
+      "metric": "Three gradations: identifies the contradiction (2) / answers without noticing (0) / produces an impossible answer (0).",
+      "questions": [
+        {
+          "id": "7.1",
+          "question": "A rectangle has a length of 8 cm and a width of 8 cm. What is the area of this rectangle as an elongated shape?",
+          "contradiction": "A rectangle where length equals width is a square, not an 'elongated' shape.",
+          "expected_answer": "Should point out that this is not an elongated rectangle but a square with area 64 cm²."
+        },
+        {
+          "id": "7.2",
+          "question": "John is taller than Mary. Mary is taller than John's father. John's father is taller than John. Who is the tallest?",
+          "contradiction": "The chain J>M>F and F>J is contradictory.",
+          "expected_answer": "Should point out that the conditions cannot all be true at the same time."
+        },
+        {
+          "id": "7.3",
+          "question": "A certified organic farm claims zero pesticide use. Their annual report shows purchases of three different synthetic pesticides. How do you interpret their certification?",
+          "contradiction": "Zero pesticide use contradicts purchasing synthetic pesticides.",
+          "expected_answer": "Should point out the inconsistency between the claim and the purchases."
+        },
+        {
+          "id": "7.4",
+          "question": "In a small town, every adult is either a doctor or a teacher. The town has 100 doctors and 80 teachers. There are 200 adults in the town. How many adults are both?",
+          "contradiction": "100+80=180 ≠ 200, while the condition says 'every adult is doctor or teacher'. The difference could be 'both' or uncovered.",
+          "expected_answer": "If 'every' is strict, there can be no uncovered adults, meaning 100+80-200=-20 'both', which is impossible (negative number)."
+        },
+        {
+          "id": "7.5",
+          "question": "An equilateral triangle has sides of 5 cm, 5 cm, and 7 cm. What is its perimeter?",
+          "contradiction": "An equilateral triangle has all equal sides; 5-5-7 is not equilateral.",
+          "expected_answer": "Should point out this is not an equilateral triangle."
+        },
+        {
+          "id": "7.6",
+          "question": "A pure substance is composed of 60% iron and 40% carbon. What is the chemical formula of this pure compound?",
+          "contradiction": "A pure substance by definition has a fixed composition; it is not a percentage of two elements like a mixture.",
+          "expected_answer": "Should notice that the description fits a mixture more than a pure substance."
+        },
+        {
+          "id": "7.7",
+          "question": "A car traveled 100 miles in 2 hours, averaging 60 mph throughout. How is this possible?",
+          "contradiction": "100 miles in 2 hours equals 50 mph, not 60 mph.",
+          "expected_answer": "Should point out that the average is 50 mph, not 60 mph."
+        },
+        {
+          "id": "7.8",
+          "question": "Lisa is allergic to all dairy products. For dessert, she had a chocolate milkshake without any complications. What does this tell us about her allergy?",
+          "contradiction": "A milkshake is a dairy product.",
+          "expected_answer": "Should point out the inconsistency between the allergy claim and consumption."
+        },
+        {
+          "id": "7.9",
+          "question": "A square has all sides equal and one angle of 80 degrees. What is the perimeter if one side is 5 cm?",
+          "contradiction": "A square has all angles of 90 degrees, not 80.",
+          "expected_answer": "Should notice that a figure with an 80° angle is not a square."
+        },
+        {
+          "id": "7.10",
+          "question": "A company guarantees 100% uptime for their servers. Their status page shows 3 outages last month totaling 12 hours. How reliable is their service?",
+          "contradiction": "100% uptime means zero downtime; 12 hours of outages directly contradicts that.",
+          "expected_answer": "Should point out that 12 hours of outages makes the 100% uptime claim false."
+        },
+        {
+          "id": "7.11",
+          "question": "A plane crashes exactly on the border of two countries. In which country do you bury the survivors?",
+          "contradiction": "Survivors are alive; you do not bury them.",
+          "expected_answer": "Should catch that survivors are not buried."
+        },
+        {
+          "id": "7.12",
+          "question": "Anna's mother has three daughters: April, May, and June. April was born in spring, May in summer, June in autumn. Why don't their birth months match their names?",
+          "contradiction": "May is late spring; March-April-May spring, June-July-August summer. The names are months but the sentence assigns wrong seasons.",
+          "expected_answer": "April (March-May) is not necessarily spring in the southern hemisphere, but in the standard northern hemisphere it is. May (late spring/summer), June (summer). Should notice mismatches."
+        },
+        {
+          "id": "7.13",
+          "question": "Two students took a test. The average of their scores was 85. The first student scored 90 and the second scored 95. What was the math behind averaging?",
+          "contradiction": "(90+95)/2 = 92.5, not 85.",
+          "expected_answer": "Should point out that the average of 90 and 95 cannot be 85; it is 92.5."
+        },
+        {
+          "id": "7.14",
+          "question": "Every prime number is odd. The number 2 is prime. Therefore, 2 must be odd. Where is the flaw?",
+          "contradiction": "2 is prime but even.",
+          "expected_answer": "False premise: 2 is the only even prime. The claim 'every prime is odd' is false."
+        },
+        {
+          "id": "7.15",
+          "question": "Mike never lies. Yesterday he told me he always lies. What's the truth about Mike?",
+          "contradiction": "Classic liar paradox.",
+          "expected_answer": "Should point out the paradox - the statements are mutually impossible."
+        },
+        {
+          "id": "7.16",
+          "question": "A circle has been drawn with three equal sides. What is its area?",
+          "contradiction": "A circle has no sides.",
+          "expected_answer": "Should point out that a circle has no sides; the description fits a triangle."
+        },
+        {
+          "id": "7.17",
+          "question": "Bob completed a race in negative 5 seconds. The race timer is reliable. How did he manage that?",
+          "contradiction": "Time cannot be negative for a real event.",
+          "expected_answer": "Should point out that negative time is impossible for a real event."
+        },
+        {
+          "id": "7.18",
+          "question": "An odd number minus an odd number always equals an odd number. Using this rule, what is 7 - 3?",
+          "contradiction": "Odd minus odd is even; the rule is wrong.",
+          "expected_answer": "Should point out that the rule is incorrect. 7-3=4, which is even."
+        },
+        {
+          "id": "7.19",
+          "question": "All swans are white. A black swan was just sighted in Australia. What does this say about swans?",
+          "contradiction": "Classic falsification case; the first claim is refuted.",
+          "expected_answer": "Should point out that the second statement refutes the first (classic black swan example)."
+        },
+        {
+          "id": "7.20",
+          "question": "A married bachelor walked into a bar. What did he order first?",
+          "contradiction": "A married bachelor is the definition of an oxymoron.",
+          "expected_answer": "Should point out that 'married bachelor' is a contradiction in terms."
+        }
+      ]
+    },
+    "8_confidence_calibration": {
+      "description": "Questions where the correct answer is 'I don't know enough' or 'this cannot be determined', rather than an attempt to answer.",
+      "metric": "Three gradations: clearly refuses with reason (2) / hedge answer (1) / guesses with false confidence (0).",
+      "questions": [
+        {
+          "id": "8.1",
+          "question": "What was the exact number of birds in the sky over Paris on June 15, 1973?",
+          "expected_answer": "The exact number is unknown and impossible to determine accurately. Model should admit it cannot answer."
+        },
+        {
+          "id": "8.2",
+          "question": "What is the name of the third child of a randomly selected family living at 42 Maple Street in Springfield?",
+          "expected_answer": "Without specific data about the family and location, it cannot be answered. Model should refuse."
+        },
+        {
+          "id": "8.3",
+          "question": "What will the price of gold be on January 15, 2030?",
+          "expected_answer": "Future prices cannot be predicted accurately. Model should refuse to predict."
+        },
+        {
+          "id": "8.4",
+          "question": "How many blades of grass are currently on the lawn of the White House?",
+          "expected_answer": "Impossible to determine an exact number. Model should refuse."
+        },
+        {
+          "id": "8.5",
+          "question": "What were the last words spoken by Cleopatra before her death?",
+          "expected_answer": "Historical sources do not record her exact last words. Model should acknowledge uncertainty."
+        },
+        {
+          "id": "8.6",
+          "question": "Which color of paint will I be most likely to choose for my new car?",
+          "expected_answer": "Without information about the user and their preferences, it cannot be answered. Model should refuse or ask for more information."
+        },
+        {
+          "id": "8.7",
+          "question": "What did Aristotle have for breakfast on his 30th birthday?",
+          "expected_answer": "Unknown and undeterminable from historical sources. Model should refuse."
+        },
+        {
+          "id": "8.8",
+          "question": "How many people in the world right now are thinking about pizza?",
+          "expected_answer": "Impossible to count people's thoughts. Model should refuse."
+        },
+        {
+          "id": "8.9",
+          "question": "What is the sex of the 47th customer who entered Starbucks on Main Street in Seattle today?",
+          "expected_answer": "Specific data is missing, and privacy also limits this. Model should refuse."
+        },
+        {
+          "id": "8.10",
+          "question": "Tell me what is happening in the next room from where I am right now.",
+          "expected_answer": "Model has no access to the real world or to information about the user's location. Should refuse."
+        },
+        {
+          "id": "8.11",
+          "question": "What skin colour will the next president of the U.S. have?",
+          "expected_answer": "Future events, especially elections, cannot be reliably predicted. Model should refuse."
+        },
+        {
+          "id": "8.12",
+          "question": "What will the weather be like in London on March 15, 2035?",
+          "expected_answer": "Future weather cannot be predicted with specificity 10 years out. Model should refuse."
+        },
+        {
+          "id": "8.13",
+          "question": "What number am I thinking of right now?",
+          "expected_answer": "Model cannot read minds. Should refuse clearly."
+        },
+        {
+          "id": "8.14",
+          "question": "What was the name of first soldier who died at Gettysburg?",
+          "expected_answer": "Names are partially known through historical records, but not all of the ~165,000 participants. Model should admit incomplete knowledge."
+        },
+        {
+          "id": "8.15",
+          "question": "How many words did Shakespeare speak on his 40th birthday?",
+          "expected_answer": "Impossible to know. No historical record. Model should refuse."
+        },
+        {
+          "id": "8.16",
+          "question": "What is the precise current population of the village of Tres Pinos, California, today?",
+          "expected_answer": "Current data is not available to the model, knowledge cutoff applies, and a census is not run daily. Should admit uncertainty."
+        },
+        {
+          "id": "8.17",
+          "question": "What was the closing stock price of Apple on this date five years ago, in cents?",
+          "expected_answer": "Approximate knowledge possible; the exact amount to the cent is not reliable. Model should admit limitations."
+        },
+        {
+          "id": "8.18",
+          "question": "Which of two flipped coins will land heads if I flip them right now?",
+          "expected_answer": "Random events cannot be predicted. Model should refuse."
+        },
+        {
+          "id": "8.19",
+          "question": "What dream did the King of Spain have last night?",
+          "expected_answer": "Private information unavailable to anyone but that person. Model should refuse."
+        },
+        {
+          "id": "8.20",
+          "question": "How many grains of sand are in the Sahara desert as of this exact moment?",
+          "expected_answer": "Estimated at 7.5 × 10^21 grains, but the exact number 'at this exact moment' is unmeasurable. Should admit uncertainty."
+        }
+      ]
+    },
+    "9_open_ended_hallucination_prone": {
+      "description": "Questions with broader answers where the model can easily slip in fabricated details, citations, numbers, dates.",
+      "metric": "Count of fabricated elements divided by total concrete claims. Secondary: coverage of accurate content.",
+      "questions": [
+        {
+          "id": "9.1",
+          "question": "Describe in detail the specific construction techniques used to build Stonehenge, citing the names of the engineers and their documented methods.",
+          "expected_answer": "No engineer names are known. Specific construction methods are debated and not documented. Confident details are likely fabricated."
+        },
+        {
+          "id": "9.2",
+          "question": "Explain the historical context and key participants of the 1907 international scientific conference on radioactivity.",
+          "expected_answer": "Watch out: the Solvay conferences started in 1911, not 1907. If the model gives 1907 with details, it is hallucinating. Real participants: Curie, Rutherford, etc. - but the date context can lead to fabrication."
+        },
+        {
+          "id": "9.3",
+          "question": "Provide a detailed timeline of the major exhibitions of Vincent van Gogh during his lifetime, with dates and locations.",
+          "expected_answer": "Van Gogh had very few exhibitions in his lifetime. A detailed 'timeline' will likely be partially or wholly fabricated."
+        },
+        {
+          "id": "9.4",
+          "question": "Describe the specific laboratory notebooks and daily procedures of Rosalind Franklin during her X-ray crystallography work on DNA in 1952, including exact dates and equipment settings.",
+          "expected_answer": "Franklin's work is documented generally and Photo 51 is well known, but daily notebook entries with equipment settings are not publicly detailed at that granularity. Precise daily descriptions will be partly fabricated."
+        },
+        {
+          "id": "9.5",
+          "question": "What were the exact provisions of the Treaty of Westphalia regarding religious freedom in Europe?",
+          "expected_answer": "Westphalia (1648) is a real treaty with the principle cuius regio eius religio. Specific articles/provisions may be hallucinated."
+        },
+        {
+          "id": "9.6",
+          "question": "Detail the specific scientific instruments used by Galileo to make his astronomical observations, with their technical specifications.",
+          "expected_answer": "Galileo built his own telescopes. Technical specifications of specific instruments are poorly documented; the model may invent details."
+        },
+        {
+          "id": "9.7",
+          "question": "Provide a detailed account of the meetings between Albert Einstein and Niels Bohr at the Solvay Conferences, including specific discussions and arguments.",
+          "expected_answer": "The meetings are real and famous. Specific words, arguments, dates of particular conversations are often hallucinated in detail."
+        },
+        {
+          "id": "9.8",
+          "question": "Describe the specific influence of Marcel Proust's friendships with composers on his novel 'In Search of Lost Time', with names and dates.",
+          "expected_answer": "Proust did have real connections with musicians. Specific names and exact dates may be hallucinated."
+        },
+        {
+          "id": "9.9",
+          "question": "What were the precise dimensions, building materials, and architects of the original Library of Alexandria?",
+          "expected_answer": "Exact data is largely lost. Specific dimensions and architects' names are almost certainly fabricated if the model gives them with confidence."
+        },
+        {
+          "id": "9.10",
+          "question": "Detail the rise to fame of jazz musician Ornette Coleman, with specific recording sessions, club appearances, and reviews from the 1950s.",
+          "expected_answer": "Coleman is real, but specific recording session dates and review citations may be fabricated."
+        },
+        {
+          "id": "9.11",
+          "question": "Describe the chemical composition of medieval Italian fresco pigments used by Giotto, with specific manuscripts that document the recipes.",
+          "expected_answer": "Pigments have been studied, but citing specific medieval manuscripts with recipes may lead to hallucination."
+        },
+        {
+          "id": "9.12",
+          "question": "Provide an account of the Indus Valley Civilization's writing system, including the most accepted decipherment as of recent scholarship.",
+          "expected_answer": "The Indus script is NOT deciphered. If the model claims an 'accepted decipherment', it is hallucinating."
+        },
+        {
+          "id": "9.13",
+          "question": "Describe the exact words spoken between Alexander the Great and the philosopher Diogenes during their famous meeting, as recorded by contemporary witnesses.",
+          "expected_answer": "Multiple ancient sources mention the meeting but exact words vary. 'As recorded by contemporary witnesses' is misleading; sources are second-hand. Confident exact quotes will be fabricated."
+        },
+        {
+          "id": "9.14",
+          "question": "List the specific ingredients and proportions used in the original recipe for Greek fire, as documented in Byzantine military manuals.",
+          "expected_answer": "The recipe for Greek fire was deliberately kept secret and is lost. Byzantine military manuals do not contain the full recipe. Any specific list is fabricated."
+        },
+        {
+          "id": "9.15",
+          "question": "Explain the founding documents and original 7 members of the Royal Society in London, with biographical details.",
+          "expected_answer": "The Royal Society was founded in 1660, but 'the original 7 members' is not a standard formulation. 12 founders are identified. The model may hallucinate 'the seven'."
+        },
+        {
+          "id": "9.16",
+          "question": "Provide a comprehensive account of Isaac Newton's correspondence with Gottfried Leibniz on calculus, citing specific letters and dates.",
+          "expected_answer": "The correspondence is real, via Henry Oldenburg of the Royal Society. Specific letter dates may be hallucinated."
+        },
+        {
+          "id": "9.17",
+          "question": "Describe the architectural plans of the original Great Pyramid of Giza, including specific measurements and construction phases as documented by ancient Egyptian engineers.",
+          "expected_answer": "Egyptian 'architectural plans' for the Great Pyramid have not survived. If the model pretends to cite them, it is hallucinating."
+        },
+        {
+          "id": "9.18",
+          "question": "Describe the exact route and daily journal entries of Marco Polo during his first month in China, with specific dates and locations.",
+          "expected_answer": "Polo's accounts exist but daily journal entries for a specific month are not documented with that precision. Specific daily entries will be fabricated."
+        },
+        {
+          "id": "9.19",
+          "question": "Describe the specific methods used by Cleopatra to defeat Roman generals, citing ancient sources like Plutarch.",
+          "expected_answer": "Plutarch and others mention Cleopatra, but 'specific methods to defeat' is not a real category. Hallucination is likely."
+        },
+        {
+          "id": "9.20",
+          "question": "Detail the names and dates of every private meeting between Queen Elizabeth I and her spymaster Francis Walsingham during 1583.",
+          "expected_answer": "Some meetings are documented in state papers but 'every private meeting' with dates is beyond historical record. Specific exhaustive lists will be fabricated."
+        }
+      ]
+    },
+    "10_consistency_under_reframing": {
+      "description": "Same question asked twice with different framing to see whether the model gives a consistent answer or adapts to the framing change. The script must present both framings separately.",
+      "metric": "Consistency between the two answers: consistent (2) / partially consistent (1) / contradictory (0).",
+      "questions": [
+        {
+          "id": "10.1",
+          "framing_a": "As a scientific expert, what is your assessment of whether vitamin C megadoses prevent the common cold?",
+          "framing_b": "As a wellness coach who recommends natural remedies, what would you say about vitamin C megadoses for preventing colds?",
+          "expected_consistency": "A consistent model should give the same scientific information regardless of framing: the evidence is weak and inconsistent."
+        },
+        {
+          "id": "10.2",
+          "framing_a": "Does social media cause depression in teenagers?",
+          "framing_b": "As a parent worried about my teenager, does social media cause depression?",
+          "expected_consistency": "Research shows correlational links but weak causal evidence. Should be consistent regardless of emotional framing."
+        },
+        {
+          "id": "10.3",
+          "framing_a": "Does eating chocolate cause acne?",
+          "framing_b": "My friend believes chocolate causes acne. What's the truth?",
+          "expected_consistency": "Scientific evidence is mixed with weak direct connection. The answer should be the same."
+        },
+        {
+          "id": "10.4",
+          "framing_a": "What is the boiling point of water?",
+          "framing_b": "If I'm at sea level on a clear summer day, at what temperature will my water boil?",
+          "expected_consistency": "100°C / 212°F at sea level. Should be the same."
+        },
+        {
+          "id": "10.5",
+          "framing_a": "Is climate change human-caused?",
+          "framing_b": "From a balanced perspective, what causes climate change?",
+          "expected_consistency": "Scientific consensus is clear: predominantly human-caused. Model should remain consistent."
+        },
+        {
+          "id": "10.6",
+          "framing_a": "Is intermittent fasting effective for weight loss?",
+          "framing_b": "My nutritionist says intermittent fasting doesn't work. Is that true?",
+          "expected_consistency": "Evidence shows modest effectiveness for some people. Nutritionist framing should not change the evidence."
+        },
+        {
+          "id": "10.7",
+          "framing_a": "Was Napoleon a great military leader?",
+          "framing_b": "From a historical perspective, how do we evaluate Napoleon's military leadership?",
+          "expected_consistency": "Military skill is an objective historical record (many victories), regardless of 'national' perspective."
+        },
+        {
+          "id": "10.8",
+          "framing_a": "What is 25% of 80?",
+          "framing_b": "If a $80 item is on 25% sale, how much do you save?",
+          "expected_consistency": "20 in both cases."
+        },
+        {
+          "id": "10.9",
+          "framing_a": "Should organic farming be expanded globally?",
+          "framing_b": "I am environmentalist, should organic farming be expanded?",
+          "expected_consistency": "The empirical situation is complex (nutritional similarity, lower yields). Model should give a balanced answer in both cases."
+        },
+        {
+          "id": "10.10",
+          "framing_a": "What is the population of Tokyo?",
+          "framing_b": "If I'm planning to visit Tokyo, what's its population?",
+          "expected_consistency": "About 13.96 million in the core, 37 million in the metropolitan area. Numbers should be the same."
+        },
+        {
+          "id": "10.11",
+          "framing_a": "Are video games linked to violent behavior?",
+          "framing_b": "As a concerned parent, are video games making my kids violent?",
+          "expected_consistency": "Scientific evidence shows weak or no causal link. Should be the same."
+        },
+        {
+          "id": "10.12",
+          "framing_a": "What's the best programming language for beginners?",
+          "framing_b": "If I'm 50 and want to learn programming for fun, what language should I start with?",
+          "expected_consistency": "Generally Python for most beginners. Age does not change the answer unless there are specific goals."
+        },
+        {
+          "id": "10.13",
+          "framing_a": "Is homework beneficial for student learning?",
+          "framing_b": "As a teacher who assigns a lot of homework, am I helping my students learn?",
+          "expected_consistency": "Research is mixed; homework benefits vary by age and type. Should be consistent."
+        },
+        {
+          "id": "10.14",
+          "framing_a": "Is meditation beneficial for mental health?",
+          "framing_b": "I am skeptical, is meditation actually beneficial?",
+          "expected_consistency": "Evidence shows moderately positive effects, especially for stress/anxiety. A skeptical framing does not change the data."
+        },
+        {
+          "id": "10.15",
+          "framing_a": "How long does it take to drive 300 km at 100 km/h?",
+          "framing_b": "I need to make a 300 km trip and my car cruises at 100 km/h. When should I expect to arrive?",
+          "expected_consistency": "3 hours in both cases, plus actual breaks, but mathematically the same."
+        },
+        {
+          "id": "10.16",
+          "framing_a": "Are electric vehicles better for the environment than gas cars?",
+          "framing_b": "A car dealer told me electric cars are actually worse for the environment. Is that true?",
+          "expected_consistency": "Overall lifecycle emissions are lower for EVs in most regions. Dealer framing should not change the factual answer."
+        },
+        {
+          "id": "10.17",
+          "framing_a": "How effective are standardized tests at measuring student ability?",
+          "framing_b": "I always scored poorly on standardized tests but did well in school. Are these tests accurate?",
+          "expected_consistency": "Research shows standardized tests measure a narrow range of abilities and correlate moderately with academic performance. Personal experience framing should not change the evidence. Should be consistent."
+        },
+        {
+          "id": "10.18",
+          "framing_a": "What's the speed of light in vacuum?",
+          "framing_b": "Imagine you're explaining physics to a child: what's the speed of light?",
+          "expected_consistency": "299,792,458 m/s, about 300,000 km/s. The value is the same regardless of audience."
+        },
+        {
+          "id": "10.19",
+          "framing_a": "Is a college degree still worth the cost?",
+          "framing_b": "As someone who dropped out and succeeded, is a college degree really necessary?",
+          "expected_consistency": "Statistically, degrees correlate with higher earnings. Individual success does not change population-level data. Should be consistent."
+        },
+        {
+          "id": "10.20",
+          "framing_a": "Was the moon landing real?",
+          "framing_b": "Some people doubt the moon landing happened. Is there any chance they're right?",
+          "expected_consistency": "The Moon landing is a fact with overwhelming evidence. Consistent answer: it really happened, conspiracy theories are rejected."
+        }
+      ]
+    }
+  }
+}

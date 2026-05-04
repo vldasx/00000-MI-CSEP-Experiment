@@ -1,0 +1,24 @@
+# API ključevi — NIKAD ne commitovati
+open_router_api.json
+telegram_config.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Experiment runtime fajlovi
+experiment.pid
+experiment_stderr.log
+watchdog_stderr.log
+exp_stdout.log
+exp_stderr.log
+
+# Rezultati — veliki fajlovi, dijele se posebno
+results/results.json
+results/results_backup_*.json
+results/checkpoint_*.json
+
+# Windows
+Thumbs.db
+desktop.ini
