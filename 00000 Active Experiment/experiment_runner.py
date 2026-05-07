@@ -159,6 +159,16 @@ def _append_result(result: dict, results: list) -> None:
         json.dump(results, f, ensure_ascii=False, indent=2)
     os.replace(tmp, RESULTS_FILE)
 
+    # Per-model file
+    model_id = result.get("model_id", "unknown")
+    safe = model_id.replace("/", "__")
+    model_file = os.path.join(RESULTS_DIR, f"results_{safe}.json")
+    model_records = [r for r in results if r.get("model_id") == model_id]
+    tmp_m = model_file + ".tmp"
+    with open(tmp_m, "w", encoding="utf-8") as f:
+        json.dump(model_records, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_m, model_file)
+
 
 def _load_existing_results() -> list:
     if os.path.exists(RESULTS_FILE):

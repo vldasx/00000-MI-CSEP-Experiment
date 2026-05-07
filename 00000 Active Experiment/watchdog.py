@@ -88,7 +88,7 @@ def main():
 
             new_lines, pos = tail_new_lines(f, pos)
             for line in new_lines:
-                if "ERROR: API failed" in line:
+                if "ERROR: API failed" in line or "ERROR:" in line:
                     consecutive_errors += 1
                     print(f"[watchdog] Neuspjesni poziv #{consecutive_errors}: {line.strip()}")
                     if consecutive_errors >= ERROR_THRESHOLD:
