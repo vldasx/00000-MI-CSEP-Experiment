@@ -14,10 +14,10 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
 
-BASE       = os.path.dirname(os.path.abspath(__file__))
+BASE       = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXP1_BASE  = os.path.join(BASE, "experiment_I")
 EXP2_BASE  = os.path.join(BASE, "experiment_II")
-OUTPUT     = os.path.join(BASE, "CSEP_Comparative_Analysis.docx")
+OUTPUT     = os.path.join(BASE, "paper", "CSEP_Comparative_Analysis.docx")
 
 CONDITIONS = {1: "Zero-Shot", 2: "CoT", 3: "CSEP-Only", 4: "CSEP+ZS"}
 COND_SHORT = {1: "ZS", 2: "CoT", 3: "CSEP", 4: "CSEP+ZS"}
