@@ -1,8 +1,8 @@
 """
-telegram_claude.py — Telegram bot koji prosljedjuje poruke Claude-u i vraca odgovore.
+telegram_bot/claude_bot.py — Telegram bot koji prosljedjuje poruke Claude-u i vraca odgovore.
 
-Pokretanje:
-    python telegram_claude.py
+Pokretanje (iz root foldera projekta):
+    python telegram_bot/claude_bot.py
 
 Komande u Telegram-u:
     /reset   — ocisti kontekst razgovora (nova sesija)
@@ -25,10 +25,11 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 # ── Konfiguracija ─────────────────────────────────────────────────────────────
 
-BASE = os.path.dirname(os.path.abspath(__file__))
+BOT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT    = os.path.dirname(BOT_DIR)
 
-TG_CFG  = os.path.join(BASE, "experiment_I", "telegram_config.json")
-API_CFG = os.path.join(BASE, "experiment_I", "open_router_api.json")
+TG_CFG  = os.path.join(BOT_DIR, "telegram_config.json")
+API_CFG = os.path.join(ROOT, "experiment_I", "open_router_api.json")
 
 MODEL        = "anthropic/claude-sonnet-4-5"
 MAX_TOKENS   = 2048
@@ -121,7 +122,7 @@ def main() -> None:
     chat_id = int(tg_cfg["chat_id"])
     api_key = load_api_key()
 
-    history: list[dict] = []   # razgovor (user/assistant poruke)
+    history: list[dict] = []
     last_update_id = 0
 
     print(f"[bot] Pokrenut. Model: {MODEL}")
@@ -150,7 +151,7 @@ def main() -> None:
                 uid  = msg.get("chat", {}).get("id")
 
                 if uid != chat_id:
-                    continue  # ignorisi nepoznate chastove
+                    continue
                 if not text:
                     continue
 
@@ -188,10 +189,9 @@ def main() -> None:
                     send_message(reply, chat_id, token)
                     print(f"[claude] {reply[:80]}{'...' if len(reply) > 80 else ''}\n")
                 except Exception as e:
-                    err = f"Greška pri pozivu API-ja: {e}"
+                    err = f"Greska pri pozivu API-ja: {e}"
                     send_message(err, chat_id, token)
                     print(f"  [ERROR] {e}")
-                    # Ukloni zadnju user poruku iz historije ako API pukne
                     if history and history[-1]["role"] == "user":
                         history.pop()
 
