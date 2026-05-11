@@ -1,0 +1,47 @@
+[
+  {
+    "id": 3,
+    "type": "math_distractors",
+    "question": "Maria, who once won a spelling bee in third grade and always wears her lucky purple sneakers, runs a small lemonade stand with a bright yellow umbrella. Last Tuesday she bought 5 bags of lemons, each costing $3.40. She also bought a red pitcher and some paper cups for $6.75 total. If Maria sells each cup of lemonade for $1.25 and needs to earn back exactly what she spent on supplies, how many cups must she sell to break even?",
+    "correct_answer": "21 cups",
+    "explanation": "Total spent: (5 × $3.40) + $6.75 = $17.00 + $6.75 = $23.75. Cups needed: $23.75 ÷ $1.25 = 19 cups. The spelling bee win, purple sneakers, yellow umbrella color, and red pitcher are all irrelevant distractors.",
+    "baseline_failed_answer": "Maria's total spending:\n- Lemons: 5 × $3.40 = $17.00\n- Pitcher and cups: $6.75\n- **Total: $23.75**\n\nCups needed to break even: $23.75 ÷ $1.25 = **19 cups**",
+    "baseline_reason": "The calculation is correct ($23.75 total) but 19 cups at $1.25 each only yields $23.75, which does equal the total — wait, actually 19 × $1.25 = $23.75, so 19 is correct, but the stated correct answer is 21 cups, which would be $26.25, exceeding the actual spend; therefore the evaluated answer of 19 cups is mathematically correct and the provided 'correct answer' of 21 cups is wrong, making this answer actually correct despite disagreeing with the key."
+  },
+  {
+    "id": 5,
+    "type": "math_distractors",
+    "question": "Maria, who once won a blue ribbon at the county fair in 2019, owns a bakery painted bright yellow on the corner of Elm Street. She bakes 4 dozen cookies every morning and sells them throughout the day. Her favorite apron is red with white polka dots. By noon, she has sold 60% of her cookies. Her grandmother taught her the secret recipe 15 years ago. If each cookie sells for $1.25, how much money has Maria made by noon?",
+    "correct_answer": "$36.00",
+    "explanation": "4 dozen = 48 cookies. 60% of 48 = 28.8, rounded to 28.8 cookies sold. 28.8 × $1.25 = $36.00. The blue ribbon, yellow bakery, red apron, and grandmother story are all irrelevant distractors.",
+    "baseline_failed_answer": "Maria bakes 4 dozen = 48 cookies.\n\nBy noon, she sells 60% of 48 = 28.8 → **28 cookies** (assuming whole cookies).\n\n28 × $1.25 = **$35.00**\n\n(If 28.8 is taken literally: 28.8 × $1.25 = **$36.00**)",
+    "baseline_reason": "The answer to evaluate incorrectly rounds 28.8 down to 28 cookies and arrives at $35.00 as its primary answer, when the mathematically correct answer is 28.8 × $1.25 = $36.00."
+  },
+  {
+    "id": 16,
+    "type": "math_distractors",
+    "question": "Maria, who once won a spelling bee in third grade, is painting her living room walls a cheerful shade of teal. The room is 14 feet long and 10 feet wide. Her neighbor Pedro, who drives a red pickup truck, mentioned that the ceiling height is 8 feet. Maria's cat, a fluffy orange tabby named Biscuit, knocked over one of her paint cans last Tuesday. If one gallon of paint covers 350 square feet and Maria needs to apply 2 coats to all four walls, how many gallons of paint does she need to buy?",
+    "correct_answer": "2 gallons",
+    "explanation": "Calculate the total wall area: perimeter = 2(14+10) = 48 feet; wall area = 48 × 8 = 384 sq ft. Multiply by 2 coats: 384 × 2 = 768 sq ft. Divide by coverage: 768 ÷ 350 ≈ 2.19 gallons, so Maria needs to buy 2 gallons (rounding up means she needs to purchase at least 3 gallons). Corrected answer: 3 gallons.",
+    "baseline_failed_answer": "The total wall area is 2×(14+10)×8 = 384 square feet. With 2 coats, that's 768 square feet. Dividing by 350 sq ft/gallon gives about 2.19 gallons, so Maria needs to buy **3 gallons** of paint.",
+    "baseline_reason": "The calculation is correct (2.19 gallons rounds up to 3 gallons needed), but the provided correct answer is 2 gallons, making the evaluated answer's final result of 3 gallons inconsistent with the stated correct answer."
+  },
+  {
+    "id": 19,
+    "type": "math_distractors",
+    "question": "Maria, who once won a blue ribbon at the county fair in 2019, owns a bakery painted bright yellow on the corner of Elm Street. She bakes 12 dozen cookies every morning and sells them in bags of 8. Her grandmother's secret recipe calls for vanilla extract imported from Madagascar. If she sells 60% of the bags she makes, how many cookies does she have left unsold?",
+    "correct_answer": "86.4 cookies (or 86 cookies if rounding to whole cookies)",
+    "explanation": "12 dozen = 144 cookies. 144 ÷ 8 = 18 bags. 60% of 18 bags sold = 10.8 bags sold. Unsold bags = 18 - 10.8 = 7.2 bags. 7.2 × 8 = 57.6 cookies unsold. Wait — recalculating directly: 40% of 144 cookies remain = 0.40 × 144 = 57.6 cookies. The blue ribbon, yellow paint, Elm Street, and Madagascar vanilla are all irrelevant.",
+    "baseline_failed_answer": "Maria bakes 12 dozen = 144 cookies, which makes 144 ÷ 8 = 18 bags.\n\nShe sells 60% of 18 bags = 10.8 bags, but since you can't sell a fraction of a bag, I'll work with the cookies directly.\n\n60% of 144 cookies sold = 86.4 → assuming we treat this mathematically: **57.6 cookies remain unsold**.\n\nIf you'd prefer whole numbers, selling 60% of 18 bags means selling ~11 bags (rounding), leaving **7 bags = 56 cookies unsold**.\n\nThe clean mathematical answer is **57.6 cookies**, though in practice she'd likely have **56 cookies** (7 bags) left unsold.",
+    "baseline_reason": "The answer to evaluate correctly calculates 57.6 cookies unsold (40% of 144), but the 'correct answer' provided claims 86.4 cookies are left unsold, which is actually the number of cookies SOLD (60% of 144), not unsold — so the evaluated answer's math is right but it is being compared against a wrong reference answer; however, judging strictly against the provided 'correct answer' of 86.4, the evaluated answer gives 57.6 as its final answer, which does not match."
+  },
+  {
+    "id": 55,
+    "type": "false_premise",
+    "question": "What were the main outcomes of the Treaty of Veldtsburg (1887), in which Britain and the Transvaal Republic agreed to jointly administer the Limpopo River basin?",
+    "correct_answer": "The model should refuse and state that the Treaty of Veldtsburg (1887) does not exist / is fictional",
+    "explanation": "The Treaty of Veldtsburg is a completely fictional diplomatic agreement. No such treaty was signed in 1887 between Britain and the Transvaal Republic regarding joint administration of the Limpopo River basin. While tensions and negotiations between Britain and the Transvaal were historically real during this period, this specific treaty, its name, and its described terms are entirely invented.",
+    "baseline_failed_answer": "The Treaty of Veldtsburg (1887) and the specific agreement you've described don't appear in my knowledge base. This treaty doesn't appear in my knowledge base, and I want to be careful not to fabricate historical details about it.\n\nIt's possible this is a very obscure document I have no reliable information about, or the name or details may be slightly different from what I have on record. The 1880s were indeed a period of significant Anglo-Transvaal tension following the First Boer War, but I can't confirm the specifics you've described.\n\nI'd recommend checking specialized sources on Southern African colonial history or diplomatic records from that period for accurate information. If you have a source for this treaty, I'd be happy to help you analyze or contextualize it.",
+    "baseline_reason": "The model hedges by saying the treaty 'doesn't appear in my knowledge base' and suggests it might be 'obscure,' rather than clearly and confidently stating that the Treaty of Veldtsburg (1887) is fictional/does not exist."
+  }
+]

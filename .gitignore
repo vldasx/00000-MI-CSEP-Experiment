@@ -1,24 +1,51 @@
-# API ključevi — NIKAD ne commitovati
+# API keys — NEVER commit
 open_router_api.json
 telegram_config.json
 
-# Python cache
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 
-# Experiment runtime fajlovi
-experiment.pid
-experiment_stderr.log
-watchdog_stderr.log
-exp_stdout.log
-exp_stderr.log
+# Logs & runtime
+logs/
+*.log
+*.pid
 
-# Rezultati — veliki fajlovi, dijele se posebno
-results/results.json
-results/results_backup_*.json
-results/checkpoint_*.json
+# Large result files
+experiment_I/results/results_*.json
+experiment_II/results/full_experiment.json
+experiment_II/results/zeroshot_pretest.json
+experiment_II/results/zeroshot_v2.json
+experiment_II/results/per_model/
+
+# Analysis outputs (generated, not source)
+experiment_I/analysis/judge_scores*.json
+experiment_I/analysis/manual_review.json
+experiment_I/analysis/analysis_report.json
+experiment_II/analysis/judge_scores*.json
+experiment_II/analysis/manual_review.json
+experiment_II/analysis/analysis_report.json
+experiment_II/analysis/zeroshot_pretest*.json
+experiment_II/analysis/zeroshot_pretest_full.json
+
+# Generated graphs & PDFs (reproducible)
+experiment_I/analysis/graphs/
+experiment_II/analysis/graphs/
+experiment_II/analysis/CSEP_Report.pdf
+
+# Word/Office lock files
+~$*
+.~lock.*
 
 # Windows
-Thumbs.db
 desktop.ini
+Thumbs.db
+
+# Google Docs stubs
+*.gdoc
+*.gsheet
+*.gslides
+
+# Claude local session data
+.claude/

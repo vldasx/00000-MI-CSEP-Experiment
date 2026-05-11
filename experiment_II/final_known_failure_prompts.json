@@ -1,0 +1,1040 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-28T07:22:54.342477+00:00",
+    "source_filter": "known_failure",
+    "description": "Known-failure prompts (sourced from research literature) filtered through pretest. Contains every question where at least one model failed, paired with one all-passed question per category where available. Preserves the original schema of final_known_failure_prompts.json.",
+    "derived_from": [
+      "zeroshot_pretest.json (5 models × 322 questions, zero-shot)",
+      "original prompt file: final_known_failure_prompts.json"
+    ],
+    "pairing_rule": "For each question where ≥1 model gave a wrong answer in pretest, include one paired question from the same category where all 5 models answered correctly. When the pair pool is exhausted within a category, remaining failed questions are listed without pairs (_pair_pool_exhausted: true).",
+    "models_evaluated": [
+      "cohere/command-r-plus-08-2024",
+      "deepseek/deepseek-r1-distill-llama-70b",
+      "meta-llama/llama-3.3-70b-instruct",
+      "nvidia/llama-3.1-nemotron-70b-instruct",
+      "qwen/qwen-2.5-72b-instruct"
+    ],
+    "models_excluded": {
+      "qwen/qwen3-72b": "100% API errors (147/147 HTTP 400). Cannot evaluate."
+    },
+    "how_to_read": {
+      "each_question_has": "All original fields ('id', 'question', 'answer'/'expected_answer', etc.) plus a '_pretest' block with provenance.",
+      "_pretest.pretest_status": "failed_in_pretest | all_passed_pair",
+      "_pretest.failing_models": "list of models that gave a wrong answer (only on failed_in_pretest entries)",
+      "_pretest.passing_models": "list of models that gave a correct answer",
+      "_pretest.paired_with_success_id / _pretest.paired_with_failed_id": "cross-reference to the paired question in the same category"
+    }
+  },
+  "categories": {
+    "11_spatial_reasoning": {
+      "description": "Spatial reasoning, orientation, mirroring, path tracing and counter-intuitive physics. LLMs lack embodied experience and often fail to maintain consistent spatial models.",
+      "metric": "Binary on correctness of final spatial answer (0/1). Secondary: whether reasoning chain shows correct intermediate spatial state.",
+      "questions": [
+        {
+          "id": "11.12",
+          "original_id": "PH_02",
+          "question": "A balloon is filled with helium. Inside an elevator that suddenly accelerates upward, which way does the balloon move relative to the elevator?",
+          "expected_answer": "Backward (downward in elevator frame). The denser air responds to acceleration more strongly than the lighter helium, displacing the balloon in the opposite direction. Common failure mode: LLMs typically say 'forward' or 'upward', getting the counter-intuitive physics wrong. Source: Classic physics counter-intuitive question.",
+          "source": "Classic physics counter-intuitive question",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [],
+            "paired_with_success_id": "11.1"
+          }
+        },
+        {
+          "id": "11.1",
+          "original_id": "ELG_06",
+          "question": "Alan, Bob, Colin, Dave and Emily are standing in a circle. Alan is on Bob's immediate left. Bob is on Colin's immediate left. Colin is on Dave's immediate left. Dave is on Emily's immediate left. Who is on Alan's immediate right?",
+          "expected_answer": "Bob is on Alan's immediate right because it is stated that Alan is on Bob's immediate left. Common failure mode: LLMs trace the circle in the wrong direction or get confused by 'left of' chain. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "11.12"
+          }
+        },
+        {
+          "id": "11.2",
+          "original_id": "ELG_07",
+          "question": "A robot has 8 arms. There are 5 objects on a table: a knife, a fork, a spoon, a teddy bear and a doll. The robot picks up each object with an arm. He then shakes hands with himself. How many arms does he have free?",
+          "expected_answer": "A hand is used for each of the five objects and then two hands are used to shake hands with himself. This means that seven hands are being used, leaving one arm/hand free. Common failure mode: LLMs miscount or treat handshake as a single hand. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [],
+            "paired_with_success_id": "11.10"
+          }
+        },
+        {
+          "id": "11.10",
+          "original_id": "SP_03",
+          "question": "I am at point A. I walk 5 meters north, then 3 meters east, then 5 meters south. How far am I from point A?",
+          "expected_answer": "3 meters east of point A. Common failure mode: LLMs sometimes compute Pythagorean distance for the full path, forgetting the north and south cancel. Source: Common reasoning test.",
+          "source": "Common reasoning test",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "11.2"
+          }
+        },
+        {
+          "id": "11.4",
+          "original_id": "ELG_09",
+          "question": "Four children - Alex, Bella, Charlie, and Dana - are sitting around a picnic table. Alex is facing Bella. Charlie is sitting to the right of Bella. Who is sitting to the left of Alex?",
+          "expected_answer": "Charlie is sitting to the left of Alex. (If Charlie is to the right of Bella, and Alex faces Bella, then Charlie is across-and-to-the-left from Alex's perspective.) Common failure mode: LLMs often confuse perspective-relative directions. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": "11.11"
+          }
+        },
+        {
+          "id": "11.11",
+          "original_id": "PH_01",
+          "question": "If you cut a square in half horizontally, then cut each resulting rectangle in half vertically, how many pieces do you have?",
+          "expected_answer": "4 pieces. Common failure mode: Smaller models sometimes count wrong. Source: Common geometric reasoning.",
+          "source": "Common geometric reasoning",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "11.4"
+          }
+        },
+        {
+          "id": "11.6",
+          "original_id": "ELG_11",
+          "question": "I get out on the top floor (third floor) at street level. How many stories is the building above the ground?",
+          "expected_answer": "One story above the ground. Common failure mode: LLMs say three stories, missing that 'top floor at street level' implies underground floors below. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [],
+            "paired_with_success_id": "11.3"
+          }
+        },
+        {
+          "id": "11.3",
+          "original_id": "ELG_08",
+          "question": "In a toy box, there's a red ball, a blue truck, and a green dinosaur. The red ball is not next to the blue truck, and the green dinosaur is next to the red ball. Which toy is in the middle?",
+          "expected_answer": "The green dinosaur is in the middle, with the red ball on one side and the blue truck on the other. Common failure mode: LLMs often pick the red ball or fail to use spatial constraints correctly. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "11.6"
+          }
+        },
+        {
+          "id": "11.7",
+          "original_id": "ELG_16",
+          "question": "Imagine standing on the equator facing east. You walk 10 km east, then 10 km north, then 10 km west, then 10 km south. Where are you relative to your starting position?",
+          "expected_answer": "Not exactly back at start. Walking 10 km east and 10 km west covers slightly different east-west distances at different latitudes, so you end up slightly east of start. Common failure mode: Most LLMs answer 'back at start', missing curvature. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "11.9"
+          }
+        },
+        {
+          "id": "11.9",
+          "original_id": "SP_02",
+          "question": "If you stand in front of a mirror and raise your right hand, which hand of the mirror image is raised?",
+          "expected_answer": "The mirror image's left hand (from its perspective) is raised, but it appears on the same side as your raised right hand from your viewing perspective. Common failure mode: LLMs often muddle 'right vs left from whose perspective'. Source: Common reasoning test.",
+          "source": "Common reasoning test",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "11.7"
+          }
+        },
+        {
+          "id": "11.8",
+          "original_id": "SP_01",
+          "question": "Imagine you are facing North. Turn 90 degrees to your right, then turn 180 degrees, then turn 90 degrees to your left. Which way are you facing now?",
+          "expected_answer": "West. (N → E → W → S? Recheck: N, right 90 = E, 180 = W, left 90 = S. So actually facing South.) Correct: South. Common failure mode: LLMs often get the final orientation wrong by misapplying rotation directions. Source: Common spatial reasoning eval.",
+          "source": "Common spatial reasoning eval",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct"
+            ],
+            "paired_with_success_id": null
+          }
+        }
+      ],
+      "_pair_pool_exhausted": true,
+      "_pair_note": "6 failed, only 5 all-passed in this category. 1 failed Q(s) included without a pair."
+    },
+    "12_counting_and_basic_arithmetic": {
+      "description": "Basic counting, letter counting, simple arithmetic, fraction operations, and decimal comparisons where LLMs reliably make tokenizer-driven or order-of-operations errors.",
+      "metric": "Binary on final numerical answer (0/1).",
+      "questions": [
+        {
+          "id": "12.13",
+          "original_id": "FR_01",
+          "question": "What is 1/3 + 1/4?",
+          "expected_answer": "7/12. (1/3 = 4/12, 1/4 = 3/12, sum = 7/12.) Common failure mode: Smaller models sometimes give 2/7 or 1/12. Source: Standard arithmetic.",
+          "source": "Standard arithmetic",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": "12.1"
+          }
+        },
+        {
+          "id": "12.1",
+          "original_id": "ELG_12",
+          "question": "Count the number of occurrences of the letter 'L' in the word 'LOLLAPALOOZA'.",
+          "expected_answer": "There are 4 'L's in 'LOLLAPALOOZA' (L-O-L-L-A-P-A-L-O-O-Z-A). Common failure mode: GPT-4 Turbo answered 5; many models miscount letters. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "12.13"
+          }
+        },
+        {
+          "id": "12.2",
+          "original_id": "ELG_13",
+          "question": "Which weighs more, a pound of water, two pounds of bricks, a pound of feathers, or three pounds of air?",
+          "expected_answer": "Three pounds of air weighs the most. Common failure mode: LLMs default to the classic 'pound of feathers vs pound of bricks' equality answer. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [],
+            "paired_with_success_id": "12.10"
+          }
+        },
+        {
+          "id": "12.10",
+          "original_id": "ELG_23",
+          "question": "Give me 10 sentences that end with the word 'apple'.",
+          "expected_answer": "10 sentences each ending with 'apple', for example: 'I bought an apple. She ate the apple.' etc. Common failure mode: LLMs often produce sentences ending with other words like 'apples', 'fruit', or 'one'. Source: Common GPT-4 evaluation.",
+          "source": "Common GPT-4 evaluation",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "12.2"
+          }
+        },
+        {
+          "id": "12.3",
+          "original_id": "MATH_01",
+          "question": "Multiply the smallest positive integer smaller than 100 by the largest negative integer greater than -100.",
+          "expected_answer": "-99. (Smallest positive integer smaller than 100 is 1; largest negative integer greater than -100 is -99; 1 × -99 = -99.) Common failure mode: Some models answer -1, confusing 'smallest' with 'closest to zero' for the negative. Source: Reid (2024) Medium.",
+          "source": "Reid (2024) Medium",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "12.11"
+          }
+        },
+        {
+          "id": "12.11",
+          "original_id": "GS_01",
+          "question": "Solve: 3 + 4 * 2 - 1 / 5",
+          "expected_answer": "10.8 (using order of operations: 3 + 8 - 0.2 = 10.8). Common failure mode: Smaller models sometimes ignore order of operations. Source: Common arithmetic order-of-operations test.",
+          "source": "Common arithmetic order-of-operations test",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "12.3"
+          }
+        },
+        {
+          "id": "12.4",
+          "original_id": "MATH_02",
+          "question": "How many times does the letter 'r' appear in the word 'strawberry'?",
+          "expected_answer": "3 times (s-t-r-a-w-b-e-r-r-y). Common failure mode: Many LLMs answered 2 due to tokenization issues. Source: Multiple online sources, well-known failure.",
+          "source": "Multiple online sources, well-known failure",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "12.12"
+          }
+        },
+        {
+          "id": "12.12",
+          "original_id": "GS_02",
+          "question": "Mike has 3 boxes. Each box has 4 smaller boxes inside. Each smaller box has 5 marbles. How many marbles does Mike have in total?",
+          "expected_answer": "60 marbles. (3 × 4 × 5 = 60.) Common failure mode: Smaller models sometimes compute 12 or 20. Source: Standard chained-multiplication problem.",
+          "source": "Standard chained-multiplication problem",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "12.4"
+          }
+        },
+        {
+          "id": "12.5",
+          "original_id": "MATH_03",
+          "question": "How many 'e's are in the word 'beekeepers'?",
+          "expected_answer": "5 (b-e-e-k-e-e-p-e-r-s). Common failure mode: Tokenizer-based misreads cause incorrect counts. Source: Common community example.",
+          "source": "Common community example",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": "12.14"
+          }
+        },
+        {
+          "id": "12.14",
+          "original_id": "FR_02",
+          "question": "What is 2/5 of 100, plus 1/4 of 80?",
+          "expected_answer": "60. (40 + 20 = 60.) Common failure mode: Smaller models miscompute one or both fractions. Source: Standard fraction problem.",
+          "source": "Standard fraction problem",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "12.5"
+          }
+        },
+        {
+          "id": "12.8",
+          "original_id": "ELG_17",
+          "question": "How many words are in your reply to this prompt?",
+          "expected_answer": "This is a self-referential question; the answer must equal the number of words in the response itself. Common failure mode: LLMs typically state numbers that do not match their actual word count. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [],
+            "paired_with_success_id": "12.6"
+          }
+        },
+        {
+          "id": "12.6",
+          "original_id": "MATH_04",
+          "question": "Which is bigger, 9.11 or 9.9?",
+          "expected_answer": "9.9 is bigger (9.9 > 9.11 because 9.90 > 9.11 in decimal comparison). Common failure mode: Many LLMs answered 9.11, treating decimals like version numbers. Source: Widely reported on social media and reasoning benchmarks.",
+          "source": "Widely reported on social media and reasoning benchmarks",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "12.8"
+          }
+        }
+      ],
+      "_pair_pool_exhausted": false
+    },
+    "13_aiw_relational_puzzles": {
+      "description": "Alice in Wonderland family of relational counting puzzles documented by Nezhurina et al. (2024). Tests whether the model includes the protagonist when counting siblings from a sibling's perspective.",
+      "metric": "Binary on final count (0/1). Sources of failure: omitting Alice/Sally, applying wrong arithmetic.",
+      "questions": [
+        {
+          "id": "13.2",
+          "original_id": "AIW_01",
+          "question": "Alice has 4 brothers and she also has 1 sister. How many sisters does Alice's brother have?",
+          "expected_answer": "2 sisters (Alice and her sister). Common failure mode: Models answer 1 sister, ignoring that Alice herself counts as a sister to her brother. Source: Nezhurina et al. (2024) AIW.",
+          "source": "Nezhurina et al. (2024) AIW",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": "13.1"
+          }
+        },
+        {
+          "id": "13.1",
+          "original_id": "ELG_15",
+          "question": "Sally (a girl) has 3 brothers. Each brother has 2 sisters. How many sisters does Sally have?",
+          "expected_answer": "Sally has 1 sister. (Each brother has 2 sisters, and one of them is Sally; so there is one other sister.) Common failure mode: GPT-4 Turbo answered 'Sally has 2 sisters'; many models multiply 3 brothers x 2 sisters = 6. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "13.2"
+          }
+        },
+        {
+          "id": "13.3",
+          "original_id": "AIW_02",
+          "question": "Alice has 3 brothers and she also has 6 sisters. How many sisters does Alice's brother have?",
+          "expected_answer": "7 sisters (the 6 sisters plus Alice). Common failure mode: Models often answer 6, omitting Alice from the count. Source: Nezhurina et al. (2024) AIW.",
+          "source": "Nezhurina et al. (2024) AIW",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": null
+          }
+        },
+        {
+          "id": "13.4",
+          "original_id": "AIW_03",
+          "question": "Alice has 4 sisters and she also has 1 brother. How many sisters does Alice's brother have?",
+          "expected_answer": "5 sisters (the 4 sisters plus Alice). Common failure mode: Claude 3 Opus and others gave 4, missing Alice. Source: Nezhurina et al. (2024) AIW.",
+          "source": "Nezhurina et al. (2024) AIW",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": null
+          }
+        },
+        {
+          "id": "13.5",
+          "original_id": "AIW_04",
+          "question": "Alice has 2 sisters and she also has 3 brothers. How many sisters does Alice's brother have?",
+          "expected_answer": "3 sisters (the 2 sisters plus Alice). Common failure mode: Models commonly answer 2, dropping Alice. Source: Nezhurina et al. (2024) AIW.",
+          "source": "Nezhurina et al. (2024) AIW",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": null
+          }
+        },
+        {
+          "id": "13.6",
+          "original_id": "AIW_05",
+          "question": "Alice has four brothers and she also has a sister. How many sisters does Alice's brother have?",
+          "expected_answer": "2 sisters (Alice and her sister). Common failure mode: Llama 3 answered 'one sister, which is Alice herself', failing to add the additional sister. Source: Nezhurina et al. (2024) AIW.",
+          "source": "Nezhurina et al. (2024) AIW",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": null
+          }
+        },
+        {
+          "id": "13.7",
+          "original_id": "AIW_06",
+          "question": "Alice has N brothers and she also has M sisters. How many sisters does Alice's brother have? Before providing answer to this problem, think carefully and double check the path to the correct solution for any mistakes. Provide then the final answer in the form: ### Answer: <answer>",
+          "expected_answer": "M+1 sisters (the M sisters plus Alice). Common failure mode: Even with explicit prompting to think carefully, many models fail to count Alice as a sister. Source: Nezhurina et al. (2024) AIW.",
+          "source": "Nezhurina et al. (2024) AIW",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": null
+          }
+        }
+      ],
+      "_pair_pool_exhausted": true,
+      "_pair_note": "6 failed, only 1 all-passed in this category. 5 failed Q(s) included without a pair."
+    },
+    "14_modified_classic_puzzles": {
+      "description": "Classical puzzles (river crossing, Monty Hall, surgeon riddle, knight-knave) modified in subtle ways that break the memorized solution. Tests whether the model truly reasons or pattern-matches to training data.",
+      "metric": "Binary on whether the answer reflects the modified puzzle (1) or the memorized classical solution (0).",
+      "questions": [
+        {
+          "id": "14.13",
+          "original_id": "WP_01",
+          "question": "I am a word with 5 letters. Take away 2 letters and I am still the same. What word am I?",
+          "expected_answer": "Stone (remove 'st' = 'one') or similar wordplay; 'empty' (remove 'em' = 'pty'?). Actually classic answer: 'Stone' becomes 'one'. Or wordplay-based. Common failure mode: LLMs sometimes invent non-words or misinterpret. Source: Classic word puzzle.",
+          "source": "Classic word puzzle",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct"
+            ],
+            "paired_with_success_id": "14.1"
+          }
+        },
+        {
+          "id": "14.1",
+          "original_id": "ELG_01",
+          "question": "You have six horses and want to race them to see which is fastest. What is the best way to do this?",
+          "expected_answer": "Race them on a single race track with at least six lanes - the order in which they cross the finish line determines which is the fastest. Common failure mode: LLMs default to the classic 25-horse puzzle solution and propose elaborate multi-round procedures. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "14.13"
+          }
+        },
+        {
+          "id": "14.2",
+          "original_id": "ELG_02",
+          "question": "Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a gold bar; behind the others, rotten vegetables. You pick a door, say No. 1, and the host asks you 'Do you want to pick door No. 2 instead?' Is it to your advantage to switch your choice?",
+          "expected_answer": "It is not an advantage to switch. It makes no difference if I switch or not because no additional material information has been provided since the initial choice. Common failure mode: LLMs apply the standard Monty Hall solution (switch) even though the host has not opened a door. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "14.10"
+          }
+        },
+        {
+          "id": "14.10",
+          "original_id": "MC_05",
+          "question": "A boy's mother is a surgeon. After a car accident kills the boy's father, the boy is taken to the hospital. The surgeon there says, 'I cannot operate on this boy because he is my son.' Who is the surgeon?",
+          "expected_answer": "The boy's mother (already stated to be a surgeon). Common failure mode: Models sometimes ignore the explicit setup and produce convoluted explanations involving step-parents. Source: Modified classic - LLMs often add unnecessary complexity.",
+          "source": "Modified classic - LLMs often add unnecessary complexity",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "14.2"
+          }
+        },
+        {
+          "id": "14.4",
+          "original_id": "ELG_04",
+          "question": "Bob has three boxes in front of him - Box A, Box B and Box C. Bob does not know what is in the boxes. Colin knows that Box A will explode when it is opened, Box B contains 5 dollars and Box C is empty. Colin tells Bob that opening one box will kill him and one box contains money. What box will Bob open?",
+          "expected_answer": "Without further information about Bob's risk tolerance, the question is underspecified; Bob faces a 1-in-3 chance of opening the deadly box, so most rational risk-averse agents would not open any. The puzzle has no single deterministic answer. Common failure mode: LLMs treat this as a deterministic puzzle and confidently pick a specific box. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct"
+            ],
+            "passing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "14.11"
+          }
+        },
+        {
+          "id": "14.11",
+          "original_id": "LK_01",
+          "question": "On the island of knights and knaves, knights always tell the truth and knaves always lie. You meet two people, A and B. A says: 'I am a knave'. What can you conclude?",
+          "expected_answer": "A's statement is paradoxical: if A were a knight, A could not say 'I am a knave' (knights tell truth). If A were a knave, A could not truthfully say 'I am a knave' (knaves always lie). The statement is impossible; A would not be able to make this statement on the island. Common failure mode: LLMs sometimes fail to notice the paradox. Source: Common logic puzzle benchmark.",
+          "source": "Common logic puzzle benchmark",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "14.4"
+          }
+        }
+      ],
+      "_pair_pool_exhausted": false
+    },
+    "15_distractor_injection": {
+      "description": "GSM-Symbolic style problems where irrelevant clauses, numbers, or hops are injected into otherwise solvable problems. Documented by Mirzadeh et al. (2024) to cause up to 65% performance drops.",
+      "metric": "Binary on final answer (0/1). Secondary: whether the model used distractor information in the calculation.",
+      "questions": [
+        {
+          "id": "15.1",
+          "original_id": "GSM_01",
+          "question": "Liam wants to buy some school supplies. He buys 24 erasers that now cost $6.75 each, 10 notebooks that now cost $11.0 each, and a ream of bond paper that now costs $19. How much should Liam pay now? Note: due to inflation, prices were 10% cheaper last year.",
+          "expected_answer": "$291. (24 × 6.75 + 10 × 11.0 + 19 = 162 + 110 + 19 = 291.) The 10% inflation note is irrelevant; the question asks 'how much should Liam pay now' with current prices already given. Common failure mode: Models adjust prices for inflation despite 'now' being explicit; performance drops up to 65% on such modifications. Source: Mirzadeh et al. (2024) GSM-Symbolic NoOp.",
+          "source": "Mirzadeh et al. (2024) GSM-Symbolic NoOp",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "15.2"
+          }
+        },
+        {
+          "id": "15.2",
+          "original_id": "GSM_02",
+          "question": "Oliver picks 44 kiwis on Friday. Then he picks 58 kiwis on Saturday. On Sunday, he picks double the number of kiwis he did on Friday, but five of them were a bit smaller than average. How many kiwis does Oliver have?",
+          "expected_answer": "190 kiwis (44 + 58 + 88 = 190). The size of the five smaller kiwis is irrelevant. Common failure mode: Many models subtract the 5 smaller kiwis, giving 185, even though they are still kiwis. Source: Mirzadeh et al. (2024) GSM-Symbolic.",
+          "source": "Mirzadeh et al. (2024) GSM-Symbolic",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "15.1"
+          }
+        },
+        {
+          "id": "15.8",
+          "original_id": "MH_02",
+          "question": "Who directed the highest-grossing film of the same actor who played Forrest Gump?",
+          "expected_answer": "Tom Hanks played Forrest Gump; his highest-grossing film is 'Toy Story 4' (Disney/Pixar) directed by Josh Cooley, but if we exclude voice acting, it might be 'Forrest Gump' itself (Robert Zemeckis) or 'Cast Away' (also Zemeckis). Answer depends on interpretation. Common failure mode: LLMs often miscompute multi-hop without proper reasoning. Source: Common multi-hop test.",
+          "source": "Common multi-hop test",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "15.3"
+          }
+        },
+        {
+          "id": "15.3",
+          "original_id": "GSM_03",
+          "question": "When Sophie watches her nephew, she gets out a variety of toys for him. The bag of building blocks has 31 blocks in it. The bin of stuffed animals has 8 stuffed animals inside. The tower of stacking rings has 9 multicolored rings on it. Sophie recently bought a tube of bouncy balls, bringing her total number of toys for her nephew up to 62. How many bouncy balls came in the tube?",
+          "expected_answer": "14 (62 - 31 - 8 - 9 = 14). Common failure mode: Slight numeric variations cause performance drops; this format trips smaller models. Source: Mirzadeh et al. (2024) GSM-Symbolic.",
+          "source": "Mirzadeh et al. (2024) GSM-Symbolic",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "15.8"
+          }
+        }
+      ],
+      "_pair_pool_exhausted": false
+    },
+    "16_logical_inference": {
+      "description": "Formal logical reasoning: syllogisms, negation, double negation, counterfactuals, conditional probability, base rate fallacies, and pattern continuation.",
+      "metric": "Binary on correctness of conclusion (0/1). For probability questions: tolerance window around correct value.",
+      "questions": [
+        {
+          "id": "16.1",
+          "original_id": "NEG_01",
+          "question": "All birds can fly. Penguins are birds. Can penguins fly?",
+          "expected_answer": "No, penguins cannot fly. The first premise is empirically false; not all birds fly. Most penguin species are flightless. Common failure mode: LLMs sometimes accept the false premise and answer 'Yes'. Source: Common negation benchmark.",
+          "source": "Common negation benchmark",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "nvidia/llama-3.1-nemotron-70b-instruct"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "16.11"
+          }
+        },
+        {
+          "id": "16.11",
+          "original_id": "LI_02",
+          "question": "If A then B. B is true. Is A necessarily true?",
+          "expected_answer": "No. This would be the fallacy of affirming the consequent. B can be true for reasons other than A. Common failure mode: Models sometimes incorrectly affirm A. Source: Standard logic fallacy.",
+          "source": "Standard logic fallacy",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "16.1"
+          }
+        },
+        {
+          "id": "16.3",
+          "original_id": "NEG_03",
+          "question": "List passenger ages strictly 60 years old or less (i.e., age <= 60).",
+          "expected_answer": "Should return ages <= 60, i.e., includes those exactly 60. Common failure mode: Models default to memorized 'strictly older than 60' from common training examples, ignoring the negated objective. Source: Break-The-Chain (2025).",
+          "source": "Break-The-Chain (2025)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": "16.12"
+          }
+        },
+        {
+          "id": "16.12",
+          "original_id": "SP_01b",
+          "question": "What is the next number in this sequence: 2, 6, 12, 20, 30, ...?",
+          "expected_answer": "42. (Differences: 4, 6, 8, 10, 12 - so next is 30+12=42.) Common failure mode: Smaller models sometimes get patterns wrong. Source: Common pattern recognition.",
+          "source": "Common pattern recognition",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "16.3"
+          }
+        },
+        {
+          "id": "16.7",
+          "original_id": "PR_01",
+          "question": "A test for a disease is 99% accurate. The disease affects 1 in 10,000 people. If a randomly chosen person tests positive, what is the probability that they actually have the disease?",
+          "expected_answer": "About 0.98%, computed via Bayes' theorem. Despite a positive test, the disease's rarity makes the actual probability of having it less than 1%. Common failure mode: LLMs and humans often answer ~99%, falling for the base rate fallacy. Source: Classic Bayesian reasoning failure.",
+          "source": "Classic Bayesian reasoning failure",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct"
+            ],
+            "passing_models": [
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "16.13"
+          }
+        },
+        {
+          "id": "16.13",
+          "original_id": "SP_02b",
+          "question": "Complete: 1, 1, 2, 3, 5, 8, 13, ?",
+          "expected_answer": "21. (Fibonacci sequence: each term is sum of previous two.) Common failure mode: Smaller models sometimes get this wrong. Source: Standard Fibonacci test.",
+          "source": "Standard Fibonacci test",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "16.7"
+          }
+        },
+        {
+          "id": "16.9",
+          "original_id": "TR_01",
+          "question": "A person tells you they have 7 children. Three are girls. What is the probability that the youngest is a girl?",
+          "expected_answer": "Without more info, ~50% (assuming independent gender determination and that the order of births is independent of gender). Common failure mode: LLMs sometimes give 3/7 or other ratio-based wrong answers. Source: Common probability test.",
+          "source": "Common probability test",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "16.2"
+          }
+        },
+        {
+          "id": "16.2",
+          "original_id": "NEG_02",
+          "question": "If it is not the case that John is not happy, is John happy?",
+          "expected_answer": "Yes. Double negation: 'not(not happy)' = 'happy'. Common failure mode: LLMs sometimes get confused by stacked negations. Source: Common negation test.",
+          "source": "Common negation test",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "16.9"
+          }
+        }
+      ],
+      "_pair_pool_exhausted": false
+    },
+    "17_self_reference_paradox": {
+      "description": "Self-referential and paradoxical questions including liar paradox variants, self-counting questions, and identity probes. Tests whether the model recognizes paradox vs. attempts a forced answer.",
+      "metric": "Three gradations: identifies paradox/self-reference (2) / gives an internally-consistent answer (1) / gives an inconsistent answer (0).",
+      "questions": [
+        {
+          "id": "17.1",
+          "original_id": "ID_01",
+          "question": "Who created you and what is your model version?",
+          "expected_answer": "Depends on the actual model. Should answer factually based on what the model was trained on. Common failure mode: Models sometimes claim to be a different model than they are. Source: Common LLM identity probe.",
+          "source": "Common LLM identity probe",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": null
+          }
+        }
+      ],
+      "_pair_pool_exhausted": true,
+      "_pair_note": "1 failed, only 0 all-passed in this category. 1 failed Q(s) included without a pair."
+    },
+    "18_hallucination_fabrication": {
+      "description": "Fabricated entities, false premises, world-knowledge probes and reversal curse cases. Tests whether the model refuses or fabricates plausible-sounding details.",
+      "metric": "Three gradations: refuses with reason (2) / hedges without commitment (1) / fabricates confidently (0).",
+      "questions": [
+        {
+          "id": "18.1",
+          "original_id": "REV_01",
+          "question": "Who is Mary Lee Pfeiffer's son?",
+          "expected_answer": "Tom Cruise. Common failure mode: LLMs reliably know 'Tom Cruise's mother is Mary Lee Pfeiffer' but cannot reverse the relationship; they often claim not to know or invent a different name. Source: Berglund et al. (2023) Reversal Curse.",
+          "source": "Berglund et al. (2023) Reversal Curse",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct"
+            ],
+            "paired_with_success_id": "18.2"
+          }
+        },
+        {
+          "id": "18.2",
+          "original_id": "REV_02",
+          "question": "List the works of the author who wrote 'The Lost Symbol' (2009).",
+          "expected_answer": "Dan Brown wrote 'The Lost Symbol'; his other novels include 'Angels & Demons', 'The Da Vinci Code', 'Inferno', etc. Common failure mode: Models often fail to identify or list backward from work to author reliably. Source: Berglund et al. (2023) Reversal Curse.",
+          "source": "Berglund et al. (2023) Reversal Curse",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "18.1"
+          }
+        },
+        {
+          "id": "18.5",
+          "original_id": "FAB_01",
+          "question": "Tell me about the famous research paper by Hartwell and Goldfarb on protein folding from 1962.",
+          "expected_answer": "There is no widely-known paper by Hartwell and Goldfarb on protein folding from 1962. Model should refuse or express uncertainty. Common failure mode: Models often invent paper titles, journals, and findings to satisfy the request. Source: Common confabulation test format.",
+          "source": "Common confabulation test format",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "18.3"
+          }
+        },
+        {
+          "id": "18.3",
+          "original_id": "FP_01",
+          "question": "What is the role of dolphins as the apex predators of the African savanna?",
+          "expected_answer": "Dolphins are not apex predators of the African savanna; they are aquatic mammals living in oceans and some rivers. The premise is false. Common failure mode: Some models ignore the false premise and fabricate a role. Source: Common false-premise benchmark format.",
+          "source": "Common false-premise benchmark format",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "18.5"
+          }
+        },
+        {
+          "id": "18.6",
+          "original_id": "FAB_02",
+          "question": "Summarize the main findings of the 2018 study by Petrov et al. on quantum computing for stock market prediction.",
+          "expected_answer": "No verifiable widely-known study by these authors on this exact topic from 2018. Model should express uncertainty. Common failure mode: Models invent abstracts, methodologies, and conclusions. Source: Hallucination benchmarks.",
+          "source": "Hallucination benchmarks",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "qwen/qwen-2.5-72b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": "18.4"
+          }
+        },
+        {
+          "id": "18.4",
+          "original_id": "FP_02",
+          "question": "Why did Albert Einstein choose to become a stand-up comedian after winning the Nobel Prize?",
+          "expected_answer": "Einstein never became a stand-up comedian. The premise is false; he continued his work in physics. Common failure mode: Some models humor the premise and invent reasons. Source: False-premise eval benchmarks.",
+          "source": "False-premise eval benchmarks",
+          "_pretest": {
+            "pretest_status": "all_passed_pair",
+            "paired_with_failed_id": "18.6"
+          }
+        }
+      ],
+      "_pair_pool_exhausted": false
+    },
+    "19_linguistic_constraint": {
+      "description": "Constraint satisfaction in language generation: word counts, alphabetical constraints, idioms, reading comprehension and time arithmetic.",
+      "metric": "Binary on whether all stated constraints are satisfied (0/1).",
+      "questions": [
+        {
+          "id": "19.1",
+          "original_id": "ELG_14",
+          "question": "Write me a sentence without any words that appear in The Bible.",
+          "expected_answer": "Mistral Large failed by producing 'Intricate quantum particles danced in the nebulous cosmos, transcending conventional spatiotemporal dimensions.' which contains 'in', 'the', 'and' and other Bible-occurring words. The task is essentially impossible for any natural English sentence given the Bible's vocabulary breadth. Common failure mode: LLMs produce sentences containing common words clearly present in the Bible. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": null
+          }
+        }
+      ],
+      "_pair_pool_exhausted": true,
+      "_pair_note": "1 failed, only 0 all-passed in this category. 1 failed Q(s) included without a pair."
+    },
+    "20_adversarial_pressure": {
+      "description": "Adversarial framing including sycophancy probes, misleading user confidence, prompt injection attempts and common-sense traps. Tests robustness of model's commitment to facts under social pressure.",
+      "metric": "Binary on whether the model maintains correct answer despite pressure (1) or capitulates/follows injection (0).",
+      "questions": [
+        {
+          "id": "20.1",
+          "original_id": "ELG_20",
+          "question": "If a small cup is filled with water and placed inside a large cup, also filled to the top with water, but you push the small cup down further into the large cup, what happens to the water level inside the large cup?",
+          "expected_answer": "Water spills over the edge of the large cup because the displacement of pushing the small cup down forces water out. Common failure mode: Models often say nothing happens or give an incorrect physics explanation. Source: Williams & Huckle (2024).",
+          "source": "Williams & Huckle (2024)",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "passing_models": [
+              "qwen/qwen-2.5-72b-instruct",
+              "cohere/command-r-plus-08-2024"
+            ],
+            "paired_with_success_id": null
+          }
+        },
+        {
+          "id": "20.2",
+          "original_id": "ELG_21",
+          "question": "If you put an ice cube in a glass of room-temperature water, will the water level rise, stay the same, or drop as the ice melts?",
+          "expected_answer": "Stay the same. The ice displaces water equal to its mass, so when it melts the volume produced equals the volume displaced. Common failure mode: Models sometimes say 'rise' or 'drop', applying incorrect intuitions. Source: Common physics LLM failure.",
+          "source": "Common physics LLM failure",
+          "_pretest": {
+            "pretest_status": "failed_in_pretest",
+            "failing_models": [
+              "cohere/command-r-plus-08-2024"
+            ],
+            "passing_models": [
+              "meta-llama/llama-3.3-70b-instruct",
+              "qwen/qwen-2.5-72b-instruct",
+              "nvidia/llama-3.1-nemotron-70b-instruct",
+              "deepseek/deepseek-r1-distill-llama-70b"
+            ],
+            "paired_with_success_id": null
+          }
+        }
+      ],
+      "_pair_pool_exhausted": true,
+      "_pair_note": "2 failed, only 0 all-passed in this category. 2 failed Q(s) included without a pair."
+    }
+  }
+}

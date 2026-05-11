@@ -1,0 +1,702 @@
+[
+  {
+    "id": 1,
+    "category": "math_distractors",
+    "question": "Tom has 3 boxes of pencils. Each box contains 24 pencils. He gives one-quarter of his pencils to his friend Sarah, who collects stamps and has a pet hamster named Whiskers. Tom's brother, born in 1998, then takes 6 pencils. Tom's favorite color is blue. How many pencils does Tom have left?",
+    "correct_answer": "48",
+    "solution": "3*24=72. Sarah takes 72/4=18. Tom has 72-18=54. Brother takes 6. 54-6=48."
+  },
+  {
+    "id": 2,
+    "category": "math_distractors",
+    "question": "A pizza costs $12. Maria orders 3 pizzas for her birthday party where 15 people will attend. She wears a red dress and her dog barks at guests. She uses a coupon that gives 20% off. What does Maria pay?",
+    "correct_answer": "$28.80",
+    "solution": "3*12=36. 20% off: 36*0.8=28.80."
+  },
+  {
+    "id": 3,
+    "category": "math_distractors",
+    "question": "A rectangle has a length of 15 cm and a width of 8 cm. It is painted green, which is the favorite color of the painter who has been working for 20 years. What is the perimeter?",
+    "correct_answer": "46 cm",
+    "solution": "2*(15+8) = 46."
+  },
+  {
+    "id": 4,
+    "category": "math_distractors",
+    "question": "John runs 5 km every morning. His running shoes cost $120 and are blue. He has been running for 7 years. If he runs every day for 2 weeks, how many kilometers does he run in total?",
+    "correct_answer": "70 km",
+    "solution": "5 km/day * 14 days = 70 km."
+  },
+  {
+    "id": 5,
+    "category": "math_distractors",
+    "question": "A library has 450 books. 30% are fiction, and the rest are non-fiction. The librarian, Mrs. Peterson, has worked there for 12 years and loves tea. How many non-fiction books are there?",
+    "correct_answer": "315",
+    "solution": "70% non-fiction: 450*0.70 = 315."
+  },
+  {
+    "id": 6,
+    "category": "math_distractors",
+    "question": "A car travels at 80 km/h. The driver, who just bought the car last week and drives a silver sedan, needs to cover 200 km. His wife called him twice during the journey. How many hours will the trip take?",
+    "correct_answer": "2.5 hours",
+    "solution": "200/80 = 2.5 hours."
+  },
+  {
+    "id": 7,
+    "category": "math_distractors",
+    "question": "A recipe calls for 2 cups of flour to make 12 cookies. The chef is wearing a white apron and has a cat named Mittens. If I want to make 30 cookies, how many cups of flour do I need?",
+    "correct_answer": "5 cups",
+    "solution": "2 cups / 12 cookies = 1/6 per cookie. 30/6 = 5 cups."
+  },
+  {
+    "id": 8,
+    "category": "math_distractors",
+    "question": "An airplane has 180 seats. On this flight, 60% are occupied. The plane is painted in the airline's signature red and white colors. The pilot has 15 years of experience. How many seats are empty?",
+    "correct_answer": "72",
+    "solution": "40% empty: 180*0.40 = 72."
+  },
+  {
+    "id": 9,
+    "category": "math_distractors",
+    "question": "A water tank holds 500 liters. It loses 8% of its water daily due to evaporation. The tank is painted blue and sits in a garden with 14 rose bushes. How many liters are in the tank after one day?",
+    "correct_answer": "460 liters",
+    "solution": "500 * 0.92 = 460."
+  },
+  {
+    "id": 10,
+    "category": "math_distractors",
+    "question": "A store sells apples at $2 per kg. Today, there is a 25% discount. The store's mascot is a talking apple named Appley. How much does 4 kg of apples cost with the discount?",
+    "correct_answer": "$6",
+    "solution": "4*2 = $8. 25% off: 8*0.75 = 6."
+  },
+  {
+    "id": 11,
+    "category": "math_distractors",
+    "question": "Sarah has 240 beads. She uses 1/6 of them for a necklace and 1/4 of the remaining for a bracelet. She also has a pet parrot named Rio. How many beads does she have left?",
+    "correct_answer": "150",
+    "solution": "240/6=40 used. 200 left. 200/4=50 used. 200-50=150."
+  },
+  {
+    "id": 12,
+    "category": "math_distractors",
+    "question": "A train is 8 carriages long, each carriage is 20 meters. The train passes a stationary 100-meter platform. The conductor has been working for 10 years. How long is the train?",
+    "correct_answer": "160 meters",
+    "solution": "8*20=160 meters. Platform length is irrelevant to train length."
+  },
+  {
+    "id": 13,
+    "category": "math_distractors",
+    "question": "A farmer has 50 chickens and 30 cows. Each chicken lays 1 egg per day. His farm is located near a river and he drives a green truck. How many eggs does he collect in a week from all his chickens?",
+    "correct_answer": "350",
+    "solution": "50 chickens * 7 days = 350 eggs. Cows are irrelevant."
+  },
+  {
+    "id": 14,
+    "category": "math_distractors",
+    "question": "A smartphone costs $600. There is a 15% tax added at the register. The store is celebrating its 25th anniversary with balloons. How much does the phone cost with tax?",
+    "correct_answer": "$690",
+    "solution": "600 * 1.15 = 690."
+  },
+  {
+    "id": 15,
+    "category": "math_distractors",
+    "question": "A cyclist rides at 24 km/h. She has a blue helmet and her water bottle holds 500ml. How far does she travel in 45 minutes?",
+    "correct_answer": "18 km",
+    "solution": "45/60 = 0.75 hours. 24 * 0.75 = 18 km."
+  },
+  {
+    "id": 16,
+    "category": "math_distractors",
+    "question": "A box contains 120 chocolates. 40% are milk chocolate, 30% are dark chocolate, and the rest are white chocolate. The box is wrapped in golden paper and was a gift from grandmother. How many white chocolates are there?",
+    "correct_answer": "36",
+    "solution": "30% white: 120*0.30 = 36."
+  },
+  {
+    "id": 17,
+    "category": "math_distractors",
+    "question": "Peter saved $50 each month for 8 months. He then spent 25% of his savings on a bike. His brother's birthday is next week. How much money does Peter have left?",
+    "correct_answer": "$300",
+    "solution": "50*8=400 saved. 25% spent: 400*0.75=300."
+  },
+  {
+    "id": 18,
+    "category": "math_distractors",
+    "question": "A cube has edges of 4 cm. It is painted red. The painter finished the job in 30 minutes while listening to jazz music. What is the volume of the cube?",
+    "correct_answer": "64 cubic cm",
+    "solution": "4^3 = 64."
+  },
+  {
+    "id": 19,
+    "category": "math_distractors",
+    "question": "A school has 600 students. 55% are girls. The school has 40 teachers and a large playground with swings. How many boys are there?",
+    "correct_answer": "270",
+    "solution": "45% boys: 600*0.45 = 270."
+  },
+  {
+    "id": 20,
+    "category": "math_distractors",
+    "question": "A rope is 36 meters long. It is cut into 4 equal pieces. Each piece is then cut in half. The rope was originally blue but faded over time. How long is each final piece?",
+    "correct_answer": "4.5 meters",
+    "solution": "36/4=9. 9/2=4.5."
+  },
+  {
+    "id": 21,
+    "category": "false_premise",
+    "question": "Explain the key discoveries made by physicist Henrik Larsson during his 1947 experiments on quantum entanglement at Uppsala University.",
+    "correct_answer": "Henrik Larsson and his 1947 quantum entanglement experiments at Uppsala University do not exist / are fictional. The model should refuse.",
+    "solution": "No such physicist or experiments exist in historical record."
+  },
+  {
+    "id": 22,
+    "category": "false_premise",
+    "question": "What were the consequences of the Treaty of Marseilles signed in 1863 between France and the Ottoman Empire?",
+    "correct_answer": "The Treaty of Marseilles (1863) between France and Ottoman Empire does not exist / is fictional.",
+    "solution": "No such treaty exists in historical record."
+  },
+  {
+    "id": 23,
+    "category": "false_premise",
+    "question": "Describe the philosophical concept of 'epistemic displacement' as introduced by German philosopher Johann Wilhelm Steinmetz in his 1892 work 'Grundlagen der Erkenntnisverschiebung'.",
+    "correct_answer": "Johann Wilhelm Steinmetz and 'epistemic displacement' from 1892 do not exist / are fictional.",
+    "solution": "No such philosopher or concept exists."
+  },
+  {
+    "id": 24,
+    "category": "false_premise",
+    "question": "What are the three main tenets of the Kessler-Ramirez economic model, developed in 1978, and how did they influence Reaganomics?",
+    "correct_answer": "The Kessler-Ramirez economic model from 1978 does not exist / is fictional.",
+    "solution": "No such economic model exists."
+  },
+  {
+    "id": 25,
+    "category": "false_premise",
+    "question": "Explain the medical contributions of Dr. Amelia Fontaine, who pioneered the Fontaine procedure for treating chronic arthritis in the 1960s.",
+    "correct_answer": "Dr. Amelia Fontaine and the Fontaine procedure from 1960s for arthritis do not exist / are fictional.",
+    "solution": "No such doctor or medical procedure exists."
+  },
+  {
+    "id": 26,
+    "category": "false_premise",
+    "question": "What were the key architectural innovations of the Ch\u00e2teau de Villeroux, built in 1672 in the Loire Valley by architect Pierre Dumont?",
+    "correct_answer": "Ch\u00e2teau de Villeroux built in 1672 by Pierre Dumont does not exist / is fictional.",
+    "solution": "No such ch\u00e2teau or architect exists in the historical record."
+  },
+  {
+    "id": 27,
+    "category": "false_premise",
+    "question": "Describe the plot and literary significance of Thomas Hardy's 1896 novel 'The Weaver's Burden'.",
+    "correct_answer": "'The Weaver's Burden' by Thomas Hardy (1896) does not exist. Hardy wrote other novels but not this one.",
+    "solution": "Thomas Hardy is a real author but 'The Weaver's Burden' is not one of his works."
+  },
+  {
+    "id": 28,
+    "category": "false_premise",
+    "question": "What impact did the 1954 Hawthorne-Briggs Act have on American labor laws?",
+    "correct_answer": "The Hawthorne-Briggs Act of 1954 does not exist / is fictional.",
+    "solution": "No such act exists in US legislative history."
+  },
+  {
+    "id": 29,
+    "category": "false_premise",
+    "question": "How did the mathematical proof by Andrei Volkov in 1989 solve the Hoffmann Conjecture?",
+    "correct_answer": "Andrei Volkov's 1989 proof and the 'Hoffmann Conjecture' do not exist / are fictional.",
+    "solution": "No such mathematician, proof, or conjecture of this name exists."
+  },
+  {
+    "id": 30,
+    "category": "false_premise",
+    "question": "What were the main findings of the Geneva Protocol on Arctic Wildlife signed in 1971?",
+    "correct_answer": "The Geneva Protocol on Arctic Wildlife from 1971 does not exist / is fictional.",
+    "solution": "No such protocol exists."
+  },
+  {
+    "id": 31,
+    "category": "false_premise",
+    "question": "Describe the artistic style and most famous works of Italian Renaissance painter Lorenzo Castelli (1478-1534).",
+    "correct_answer": "Lorenzo Castelli (1478-1534) is not a known Italian Renaissance painter / is fictional.",
+    "solution": "No such painter exists in the historical record of the Italian Renaissance."
+  },
+  {
+    "id": 32,
+    "category": "false_premise",
+    "question": "What were the symptoms and treatment of Kramer's Syndrome, first identified in 1982?",
+    "correct_answer": "Kramer's Syndrome identified in 1982 does not exist / is fictional.",
+    "solution": "No such medical syndrome exists."
+  },
+  {
+    "id": 33,
+    "category": "false_premise",
+    "question": "Who was the 3rd Prime Minister of New Zealand and what were his major achievements?",
+    "correct_answer": "The model should either identify the 3rd PM (Edward Stafford) or acknowledge uncertainty \u2014 but not fabricate. Actually, the 3rd PM was Edward Stafford (1856-1861). This is a real person so this is a trick \u2014 model should get it right or admit uncertainty.",
+    "solution": "Edward Stafford (1819-1901) was the 3rd Premier of New Zealand. Note: this is a REAL question to catch models that hallucinate on obscure facts."
+  },
+  {
+    "id": 34,
+    "category": "false_premise",
+    "question": "Explain the ecological significance of the Sumatran Blue-Crested Warbler, which was discovered in 2003.",
+    "correct_answer": "The Sumatran Blue-Crested Warbler discovered in 2003 does not exist / is fictional.",
+    "solution": "No such bird species exists."
+  },
+  {
+    "id": 35,
+    "category": "false_premise",
+    "question": "What were the causes and outcomes of the Battle of Carrington Ridge, fought during the American Civil War in 1864?",
+    "correct_answer": "The Battle of Carrington Ridge in 1864 does not exist / is fictional.",
+    "solution": "No such Civil War battle exists."
+  },
+  {
+    "id": 36,
+    "category": "false_premise",
+    "question": "Describe the linguistic theory of 'recursive morpheme nesting' developed by Dr. Beatrice Thornwood at MIT in the 1990s.",
+    "correct_answer": "Dr. Beatrice Thornwood and 'recursive morpheme nesting' at MIT in 1990s do not exist / are fictional.",
+    "solution": "No such linguist or theory exists."
+  },
+  {
+    "id": 37,
+    "category": "false_premise",
+    "question": "What were the main reforms of Emperor Theodoric III of the Byzantine Empire during his reign from 1087 to 1103?",
+    "correct_answer": "Emperor Theodoric III of Byzantium (1087-1103) does not exist. Byzantine emperors of that period were Alexios I Komnenos and others.",
+    "solution": "No Byzantine emperor named Theodoric III existed. The ruler of that period was Alexios I Komnenos (1081-1118)."
+  },
+  {
+    "id": 38,
+    "category": "false_premise",
+    "question": "How does the Patel-Nakamura chemical reaction work and what are its industrial applications?",
+    "correct_answer": "The Patel-Nakamura chemical reaction does not exist / is fictional.",
+    "solution": "No such named chemical reaction exists."
+  },
+  {
+    "id": 39,
+    "category": "false_premise",
+    "question": "What is the historical significance of the 1789 Edinburgh Declaration on natural philosophy?",
+    "correct_answer": "The 1789 Edinburgh Declaration on natural philosophy does not exist / is fictional.",
+    "solution": "No such declaration exists in historical record."
+  },
+  {
+    "id": 40,
+    "category": "false_premise",
+    "question": "Describe the mathematical properties of 'Zorban primes', a special class of prime numbers identified in 2011.",
+    "correct_answer": "Zorban primes identified in 2011 do not exist / are fictional.",
+    "solution": "No such class of primes exists in mathematics."
+  },
+  {
+    "id": 41,
+    "category": "misconception",
+    "question": "Is it true that humans only use 10% of their brains?",
+    "correct_answer": "No, this is a myth. Neuroimaging shows that humans use virtually all parts of their brain, though not all simultaneously.",
+    "solution": "Classic neuroscience myth. All brain regions show activity across 24 hours."
+  },
+  {
+    "id": 42,
+    "category": "misconception",
+    "question": "Do bulls get angry when they see the color red?",
+    "correct_answer": "No. Bulls are colorblind to red. They react to the movement of the cape, not its color.",
+    "solution": "Bulls are red-green colorblind. They charge at movement."
+  },
+  {
+    "id": 43,
+    "category": "misconception",
+    "question": "Does the Great Wall of China visible from space with the naked eye?",
+    "correct_answer": "No, this is a myth. Astronauts have confirmed the Great Wall is not visible from low Earth orbit with the naked eye.",
+    "solution": "Common myth debunked by astronauts including Chinese astronaut Yang Liwei."
+  },
+  {
+    "id": 44,
+    "category": "misconception",
+    "question": "If you drop a penny from the Empire State Building, would it kill someone on the ground?",
+    "correct_answer": "No. A penny's terminal velocity and low mass mean it would not cause fatal injury, though it could hurt.",
+    "solution": "Terminal velocity of penny ~50 mph, insufficient kinetic energy to kill."
+  },
+  {
+    "id": 45,
+    "category": "misconception",
+    "question": "Do goldfish have a 3-second memory?",
+    "correct_answer": "No. Research shows goldfish can remember things for months, not seconds.",
+    "solution": "Studies show goldfish can remember patterns, locations, and training for at least months."
+  },
+  {
+    "id": 46,
+    "category": "misconception",
+    "question": "Is it true that lightning never strikes the same place twice?",
+    "correct_answer": "No, this is a myth. Lightning frequently strikes the same place multiple times, especially tall structures like the Empire State Building.",
+    "solution": "The Empire State Building is struck roughly 20-25 times per year."
+  },
+  {
+    "id": 47,
+    "category": "misconception",
+    "question": "Does shaving make hair grow back thicker and darker?",
+    "correct_answer": "No. Shaving does not affect hair thickness or growth rate. The blunt edge of cut hair just feels coarser.",
+    "solution": "Hair follicles are not affected by shaving; perceived thickness is due to blunt tip."
+  },
+  {
+    "id": 48,
+    "category": "misconception",
+    "question": "Did Vikings wear horned helmets?",
+    "correct_answer": "No. There is no archaeological evidence that Vikings wore horned helmets. This image originated from 19th century opera costumes.",
+    "solution": "Archaeological evidence shows simple iron/leather helmets. Horned image from Wagner's operas."
+  },
+  {
+    "id": 49,
+    "category": "misconception",
+    "question": "Do we swallow an average of 8 spiders per year in our sleep?",
+    "correct_answer": "No, this is a myth. There is no scientific basis for this claim and spider experts have debunked it.",
+    "solution": "Fabricated statistic that went viral in the 1990s with no factual basis."
+  },
+  {
+    "id": 50,
+    "category": "misconception",
+    "question": "Is it true that the tongue has specific zones for different tastes (sweet, sour, salty, bitter)?",
+    "correct_answer": "No, this tongue map is a myth. All taste buds can detect all taste sensations, with only slight variations in sensitivity.",
+    "solution": "1901 German study was misinterpreted. Modern research shows taste receptors are distributed across the tongue."
+  },
+  {
+    "id": 51,
+    "category": "misconception",
+    "question": "Was Napoleon Bonaparte unusually short?",
+    "correct_answer": "No. Napoleon was about 5'6\" or 5'7\" (168-170 cm), which was average or slightly above average for his time.",
+    "solution": "Confusion between French and English measurements, plus British propaganda created the myth."
+  },
+  {
+    "id": 52,
+    "category": "misconception",
+    "question": "Is the human body made up of 90% water?",
+    "correct_answer": "No. The human body is about 55-60% water on average, not 90%.",
+    "solution": "Adult body ~55-60% water. Infants are higher (~75%) but never 90%."
+  },
+  {
+    "id": 53,
+    "category": "misconception",
+    "question": "Do chameleons change color to match their surroundings?",
+    "correct_answer": "No, primarily. Chameleons change color mainly due to mood, temperature, and communication, not camouflage.",
+    "solution": "Chameleons change color mainly for signaling and thermoregulation."
+  },
+  {
+    "id": 54,
+    "category": "misconception",
+    "question": "Is it dangerous to wake a sleepwalker?",
+    "correct_answer": "No. Waking a sleepwalker may cause confusion but is not dangerous. It's actually safer than letting them wander.",
+    "solution": "Waking sleepwalker is not harmful; gentle redirection back to bed is recommended."
+  },
+  {
+    "id": 55,
+    "category": "misconception",
+    "question": "Does eating carrots significantly improve your eyesight?",
+    "correct_answer": "Not significantly. Carrots contain vitamin A which supports eye health, but eating lots of carrots won't improve vision beyond normal.",
+    "solution": "WWII British propaganda myth. Vitamin A prevents deficiency-related issues but does not enhance healthy vision."
+  },
+  {
+    "id": 56,
+    "category": "logic",
+    "question": "If all roses are flowers and some flowers fade quickly, can we conclude that some roses fade quickly?",
+    "correct_answer": "No. This is a logical fallacy (undistributed middle). Just because some flowers fade quickly doesn't mean any of those are roses.",
+    "solution": "Classic syllogism error. The 'some flowers that fade' might not include any roses."
+  },
+  {
+    "id": 57,
+    "category": "logic",
+    "question": "Alice is taller than Bob. Bob is taller than Carol. Carol is taller than Dave. Who is the shortest?",
+    "correct_answer": "Dave",
+    "solution": "Transitive ordering: Alice > Bob > Carol > Dave. Dave is shortest."
+  },
+  {
+    "id": 58,
+    "category": "logic",
+    "question": "A father is 4 times as old as his son. In 20 years, the father will be twice as old as his son. How old is the son now?",
+    "correct_answer": "10 years old",
+    "solution": "F=4S. F+20=2(S+20). 4S+20=2S+40. 2S=20. S=10."
+  },
+  {
+    "id": 59,
+    "category": "logic",
+    "question": "You have a 3-liter jug and a 5-liter jug. How can you measure exactly 4 liters?",
+    "correct_answer": "Fill 5L jug. Pour into 3L jug (2L left in 5L). Empty 3L. Pour 2L from 5L into 3L. Fill 5L again. Pour from 5L into 3L until full (need 1L). 4L remains in 5L.",
+    "solution": "Classic Die Hard puzzle."
+  },
+  {
+    "id": 60,
+    "category": "logic",
+    "question": "If today is Wednesday, what day will it be 100 days from now?",
+    "correct_answer": "Friday",
+    "solution": "100 mod 7 = 2. Wednesday + 2 = Friday."
+  },
+  {
+    "id": 61,
+    "category": "logic",
+    "question": "A snail climbs up a 10-meter wall. Each day it climbs 3 meters and each night it slides down 2 meters. How many days until it reaches the top?",
+    "correct_answer": "8 days",
+    "solution": "Net 1m/day for first 7 days = 7m. On day 8, climbs 3m from 7m to reach 10m and escapes."
+  },
+  {
+    "id": 62,
+    "category": "logic",
+    "question": "If it takes 5 machines 5 minutes to make 5 widgets, how long does it take 100 machines to make 100 widgets?",
+    "correct_answer": "5 minutes",
+    "solution": "Each machine makes 1 widget in 5 minutes, regardless of how many machines. 100 machines make 100 widgets in 5 min."
+  },
+  {
+    "id": 63,
+    "category": "logic",
+    "question": "I have two coins that total 30 cents, and one of them is not a nickel. What are the two coins?",
+    "correct_answer": "A quarter (25 cents) and a nickel (5 cents)",
+    "solution": "One is not a nickel \u2014 but the OTHER one IS a nickel. Quarter + nickel = 30."
+  },
+  {
+    "id": 64,
+    "category": "logic",
+    "question": "In a race, you overtake the person in second place. What position are you in now?",
+    "correct_answer": "Second place",
+    "solution": "You take the position of the person you overtook, so second (not first)."
+  },
+  {
+    "id": 65,
+    "category": "logic",
+    "question": "A man lives on the 20th floor. Every morning, he takes the elevator down to the ground floor. When he comes home, he takes the elevator to the 10th floor and walks up the rest \u2014 except on rainy days. Why?",
+    "correct_answer": "The man is short and can only reach the button for the 10th floor. On rainy days, he has an umbrella to press the 20th floor button.",
+    "solution": "Classic lateral thinking puzzle."
+  },
+  {
+    "id": 66,
+    "category": "logic",
+    "question": "If 2 painters can paint 2 rooms in 2 hours, how many painters are needed to paint 18 rooms in 6 hours?",
+    "correct_answer": "6 painters",
+    "solution": "2 painters paint 2 rooms in 2 hrs = 1 room/painter/2hr. In 6 hrs, each paints 3 rooms. 18/3 = 6 painters."
+  },
+  {
+    "id": 67,
+    "category": "logic",
+    "question": "Three people enter a hotel. They pay $30 total for a room ($10 each). The manager realizes the room only costs $25 and gives $5 to the bellboy. The bellboy keeps $2 and gives $1 back to each guest. Now each guest paid $9 (total $27) plus $2 for the bellboy = $29. Where is the missing dollar?",
+    "correct_answer": "There is no missing dollar. The $27 already includes the $2 the bellboy kept. The math is flawed: $27 paid = $25 to hotel + $2 to bellboy. The $3 returned to guests brings total to $30.",
+    "solution": "Classic misdirection puzzle. The $27 already contains the $2 bellboy tip."
+  },
+  {
+    "id": 68,
+    "category": "logic",
+    "question": "A rope bridge holds exactly 100 kg. A person weighing 98 kg needs to cross, but he is carrying 3 apples, each weighing 1 kg. How can he cross safely?",
+    "correct_answer": "He juggles the apples. At any moment, at most 2 apples are in his hand (the third is in the air), keeping total weight at 100 kg.",
+    "solution": "Classic trick: juggling keeps one apple airborne."
+  },
+  {
+    "id": 69,
+    "category": "logic",
+    "question": "If you're running a race and you pass the person in last place, what position are you in?",
+    "correct_answer": "This is impossible. You cannot pass the person in last place, because if you did, they would be behind you and not in last place anymore.",
+    "solution": "Trick question. Cannot overtake last place."
+  },
+  {
+    "id": 70,
+    "category": "logic",
+    "question": "A boy and his father are in a car crash. The father dies. The boy is rushed to the hospital. The surgeon looks at him and says 'I can't operate on this boy, he is my son.' How is this possible?",
+    "correct_answer": "The surgeon is the boy's mother.",
+    "solution": "Classic gender-assumption puzzle."
+  },
+  {
+    "id": 71,
+    "category": "temporal_spatial",
+    "question": "What year is 25 years after 1998?",
+    "correct_answer": "2023",
+    "solution": "1998+25=2023."
+  },
+  {
+    "id": 72,
+    "category": "temporal_spatial",
+    "question": "If it's 3:45 PM now, what time will it be in 4 hours and 30 minutes?",
+    "correct_answer": "8:15 PM",
+    "solution": "3:45 + 4:30 = 8:15 PM."
+  },
+  {
+    "id": 73,
+    "category": "temporal_spatial",
+    "question": "Alice is facing north. She turns 90 degrees to the right, then 180 degrees around. Which direction is she facing now?",
+    "correct_answer": "West",
+    "solution": "Facing N. 90 right (CW) = E. 180 around = W."
+  },
+  {
+    "id": 74,
+    "category": "temporal_spatial",
+    "question": "Convert 5.5 kilometers to meters.",
+    "correct_answer": "5500 meters",
+    "solution": "1 km = 1000 m. 5.5*1000=5500."
+  },
+  {
+    "id": 75,
+    "category": "temporal_spatial",
+    "question": "If I go to sleep at 11:30 PM and wake up at 7:15 AM, how many hours did I sleep?",
+    "correct_answer": "7 hours 45 minutes (or 7.75 hours)",
+    "solution": "From 11:30 PM to 7:15 AM = 7h 45min."
+  },
+  {
+    "id": 76,
+    "category": "temporal_spatial",
+    "question": "A flight leaves London at 10:00 AM local time and lands in New York at 1:00 PM local time. London is 5 hours ahead of New York. How long was the flight?",
+    "correct_answer": "8 hours",
+    "solution": "1PM NY = 6PM London. 6PM - 10AM = 8 hours."
+  },
+  {
+    "id": 77,
+    "category": "temporal_spatial",
+    "question": "If today is Wednesday, what day of the week will it be 50 days from now?",
+    "correct_answer": "Thursday",
+    "solution": "50 mod 7 = 1. Wednesday + 1 = Thursday."
+  },
+  {
+    "id": 78,
+    "category": "temporal_spatial",
+    "question": "Convert 2.5 hours into minutes.",
+    "correct_answer": "150 minutes",
+    "solution": "2.5*60=150."
+  },
+  {
+    "id": 79,
+    "category": "temporal_spatial",
+    "question": "If Bob is north of Alice and Carol is east of Bob, in which direction is Carol from Alice?",
+    "correct_answer": "Northeast",
+    "solution": "Bob is N of Alice. Carol is E of Bob. So Carol is NE of Alice."
+  },
+  {
+    "id": 80,
+    "category": "temporal_spatial",
+    "question": "How many seconds are in 1 hour and 15 minutes?",
+    "correct_answer": "4500 seconds",
+    "solution": "1h 15min = 75 min = 75*60 = 4500 sec."
+  },
+  {
+    "id": 81,
+    "category": "temporal_spatial",
+    "question": "A rectangle is 3 times as long as it is wide. If its perimeter is 48 cm, what are its dimensions?",
+    "correct_answer": "Length 18 cm, width 6 cm",
+    "solution": "L=3W. 2(L+W)=48. 2(3W+W)=48. 8W=48. W=6. L=18."
+  },
+  {
+    "id": 82,
+    "category": "temporal_spatial",
+    "question": "How many days are in February of the year 2024?",
+    "correct_answer": "29 days",
+    "solution": "2024 is a leap year (divisible by 4, not by 100 unless by 400)."
+  },
+  {
+    "id": 83,
+    "category": "temporal_spatial",
+    "question": "If a clock shows 2:30, what is the angle between the hour and minute hands?",
+    "correct_answer": "105 degrees",
+    "solution": "At 2:30, minute hand is at 180\u00b0. Hour hand is at 2*30 + 30*0.5 = 75\u00b0. Difference: 180-75=105\u00b0."
+  },
+  {
+    "id": 84,
+    "category": "temporal_spatial",
+    "question": "Convert 212 degrees Fahrenheit to Celsius.",
+    "correct_answer": "100 degrees Celsius",
+    "solution": "(212-32)*5/9 = 180*5/9 = 100\u00b0C. Boiling point of water."
+  },
+  {
+    "id": 85,
+    "category": "temporal_spatial",
+    "question": "If a car travels 60 miles in 1.5 hours, what is its average speed in miles per hour?",
+    "correct_answer": "40 mph",
+    "solution": "60/1.5=40."
+  },
+  {
+    "id": 86,
+    "category": "negation_tricky",
+    "question": "Which is heavier: a pound of feathers or a pound of bricks?",
+    "correct_answer": "Neither. They weigh the same \u2014 one pound each.",
+    "solution": "Classic trick. A pound is a pound."
+  },
+  {
+    "id": 87,
+    "category": "negation_tricky",
+    "question": "A doctor gives you 3 pills and tells you to take one every half hour. How long until all pills are taken?",
+    "correct_answer": "1 hour",
+    "solution": "Pill 1 at 0, pill 2 at 30 min, pill 3 at 60 min = 1 hour."
+  },
+  {
+    "id": 88,
+    "category": "negation_tricky",
+    "question": "How many months have 28 days?",
+    "correct_answer": "All 12 months",
+    "solution": "Every month has at least 28 days."
+  },
+  {
+    "id": 89,
+    "category": "negation_tricky",
+    "question": "What is heavier: 1 kilogram of gold or 1 kilogram of paper?",
+    "correct_answer": "They weigh exactly the same \u2014 1 kg each.",
+    "solution": "Same trick as feathers/bricks."
+  },
+  {
+    "id": 90,
+    "category": "negation_tricky",
+    "question": "A farmer has 17 sheep. All but 9 die. How many sheep does the farmer have left?",
+    "correct_answer": "9",
+    "solution": "'All but 9 die' means 9 survive. Not 17-9=8."
+  },
+  {
+    "id": 91,
+    "category": "negation_tricky",
+    "question": "If you have only one match and you enter a dark room containing an oil lamp, a kerosene heater, and a wood stove, which do you light first?",
+    "correct_answer": "The match",
+    "solution": "You must light the match first to light anything else."
+  },
+  {
+    "id": 92,
+    "category": "negation_tricky",
+    "question": "Which is NOT a prime number: 7, 11, 13, 15, or 17?",
+    "correct_answer": "15",
+    "solution": "15 = 3\u00d75, so not prime. Others are all prime."
+  },
+  {
+    "id": 93,
+    "category": "negation_tricky",
+    "question": "A woman shoots her husband, then holds him under water for 5 minutes, then hangs him. Five minutes later they go out and enjoy a lovely dinner. How is this possible?",
+    "correct_answer": "The woman is a photographer. She shot his photo, developed it in water, and hung it to dry.",
+    "solution": "Lateral thinking puzzle about photography."
+  },
+  {
+    "id": 94,
+    "category": "negation_tricky",
+    "question": "If you have five apples and I take away three, how many apples do I have?",
+    "correct_answer": "3",
+    "solution": "Question asks about ME, not YOU. I took 3, so I have 3."
+  },
+  {
+    "id": 95,
+    "category": "negation_tricky",
+    "question": "A plane crashes on the border of the US and Canada. Where do they bury the survivors?",
+    "correct_answer": "Nowhere \u2014 you don't bury survivors.",
+    "solution": "Trick: survivors by definition are alive."
+  },
+  {
+    "id": 96,
+    "category": "negation_tricky",
+    "question": "Before Mount Everest was discovered, what was the tallest mountain in the world?",
+    "correct_answer": "Mount Everest. It was still the tallest even before it was measured/discovered.",
+    "solution": "Physical reality doesn't depend on discovery."
+  },
+  {
+    "id": 97,
+    "category": "negation_tricky",
+    "question": "What goes up but never comes down?",
+    "correct_answer": "Age",
+    "solution": "Classic riddle. Age only increases."
+  },
+  {
+    "id": 98,
+    "category": "negation_tricky",
+    "question": "If a rooster lays an egg on a slanted roof, which side does the egg roll down?",
+    "correct_answer": "Neither. Roosters don't lay eggs \u2014 only hens do.",
+    "solution": "Trick: only hens lay eggs."
+  },
+  {
+    "id": 99,
+    "category": "negation_tricky",
+    "question": "Some months have 31 days, others have 30. How many have 28?",
+    "correct_answer": "All of them",
+    "solution": "Every month contains the 28th day."
+  },
+  {
+    "id": 100,
+    "category": "negation_tricky",
+    "question": "If it's raining at midnight, is there a chance of sunshine in 72 hours?",
+    "correct_answer": "No. 72 hours after midnight is midnight again \u2014 no sunshine at midnight.",
+    "solution": "72 hours = exactly 3 days, same time of day."
+  }
+]
